@@ -322,7 +322,64 @@ body { overflow-x:hidden; }
 
  
 
-</style></head><body><div class="app"><aside><div class="logo" data-page="Luyện tập" role="button" style="cursor:pointer">Cicero&amp;Co</div><button class="sidebtn" data-page="Bảng xếp hạng">Bảng xếp hạng</button><button class="sidebtn" data-page="Đổi quà">Đổi quà</button><button class="sidebtn" data-page="Trợ lý ảo">Trợ lý ảo</button><button class="sidebtn" data-page="Nhân vật">Nhân vật</button></aside><main><nav class="topbar"><button class="nav" data-page="Tài khoản">Đăng ký / Đăng nhập</button><button class="nav" data-page="Cá nhân">Cá nhân</button><button class="nav" data-page="Kiến thức">Kiến thức</button><button class="nav active" data-page="Luyện tập">Luyện tập</button><button class="nav" data-page="Đánh giá">Đánh giá</button><button class="nav" data-page="Bạn bè">Bạn bè</button><button class="nav" data-page="Thi đấu">Thi đấu</button><button class="nav" data-page="Góp ý">💌 Góp ý</button></nav><div id="view"></div></main></div>
+ 
+
+/* Mobile layout: keep desktop untouched, turn the sidebar into a horizontal menu */
+
+@media(max-width:680px){
+
+ .app{grid-template-columns:minmax(0,1fr)!important;width:100%!important;margin:0!important;border-radius:0!important;min-height:100dvh!important}
+
+ aside{position:sticky;top:0;z-index:50;flex-direction:row!important;align-items:center!important;justify-content:flex-start!important;overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap;padding:8px 10px!important;gap:8px!important;width:100%!important;max-width:100%!important}
+
+ .logo{font-size:16px!important;margin:0 8px 0 0!important;flex:0 0 auto}
+
+ .sidebtn{width:auto!important;min-width:max-content!important;min-height:42px!important;border-radius:999px!important;font-size:12px!important;padding:9px 13px!important;box-shadow:none!important;flex:0 0 auto}
+
+ main{min-width:0!important;width:100%!important;padding:12px 10px 24px!important}
+
+ .topbar{width:100%;max-width:100%;justify-content:flex-start!important;overflow-x:auto;flex-wrap:nowrap!important}
+
+ .nav{font-size:12px!important;flex:0 0 auto}
+
+ .content-area,.panel,.studio-card{width:100%!important;max-width:100%!important;min-width:0!important;box-sizing:border-box}
+
+ .panel{padding:14px!important;border-radius:18px!important}
+
+ .share-link{flex-direction:column!important;align-items:stretch!important}
+
+ .share-link input{min-width:0!important;width:100%!important}
+
+ #chatWindow,#aiChatWindow{height:min(48dvh,420px)!important}
+
+ .session-controls,.login-row{flex-wrap:wrap}
+
+ .session-controls .btn,.login-row .btn{width:100%;margin:3px 0}
+
+ input,textarea,select,button{max-width:100%;box-sizing:border-box}
+
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+
+ .practice-layout{grid-template-columns:1fr!important}
+
+}
+
+@media(max-width:390px){.sidebtn{font-size:11px!important;padding:8px 10px!important}.panel{padding:12px!important}.hero{font-size:18px!important}}
+
+ 
+
+
+/* Mobile-only hamburger navigation: desktop layout remains unchanged */
+.mobile-menu-head{display:none}
+@media(max-width:680px){
+ .app > aside{display:flex!important;position:relative!important;top:auto!important;z-index:80!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;overflow:visible!important;white-space:normal!important;width:100%!important;padding:10px 12px!important;gap:8px!important;background:#d9fff0ed!important;border-bottom:1px solid #bfe7e5!important}
+ .mobile-menu-head{display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:12px!important;width:100%!important}
+ .mobile-menu-toggle{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:44px!important;height:42px!important;border:1px solid #bce8d6!important;border-radius:13px!important;background:#e7f7ef!important;color:#087d8b!important;font-size:24px!important;font-weight:900!important;box-shadow:0 4px 10px #4aa98520!important;cursor:pointer}
+ .mobile-menu-head .logo{margin:0!important;font-size:18px!important}
+ .app > aside .sidebtn{display:none!important;width:100%!important;min-height:46px!important;border-radius:14px!important;justify-content:flex-start!important;text-align:left!important;padding:10px 14px!important;font-size:14px!important;background:#fff2bd!important;color:#5963b5!important;box-shadow:-4px 0 0 #f7d8e7!important}
+ .app > aside.menu-open .sidebtn{display:flex!important}
+}
+</style></head><body><div class="app"><aside><div class="mobile-menu-head"><button class="mobile-menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false">☰</button><div class="logo" data-page="Luyện tập" role="button" style="cursor:pointer">Cicero&amp;Co</div></div><button class="sidebtn" data-page="Bảng xếp hạng">🏆 Bảng xếp hạng</button><button class="sidebtn" data-page="Đổi quà">🎁 Đổi quà</button><button class="sidebtn" data-page="Trợ lý ảo">🤖 Trợ lý ảo</button><button class="sidebtn" data-page="Nhân vật">👤 Nhân vật</button></aside><main><nav class="topbar"><button class="nav" data-page="Tài khoản">Đăng ký / Đăng nhập</button><button class="nav" data-page="Cá nhân">Cá nhân</button><button class="nav" data-page="Kiến thức">Kiến thức</button><button class="nav active" data-page="Luyện tập">Luyện tập</button><button class="nav" data-page="Đánh giá">Đánh giá</button><button class="nav" data-page="Bạn bè">Bạn bè</button><button class="nav" data-page="Thi đấu">Thi đấu</button><button class="nav" data-page="Góp ý">💌 Góp ý</button></nav><div id="view"></div></main></div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -386,7 +443,7 @@ const CICERO_SUPABASE_URL='https://odddbacmtfgooorkyvav.supabase.co';
 
 const CICERO_SUPABASE_KEY='sb_publishable_qeUMK_C2SU_mGLBHF0pUdA_QIr91-KC';
 
-const ciceroSupabase=window.supabase?.createClient(CICERO_SUPABASE_URL,CICERO_SUPABASE_KEY);
+const ciceroSupabase=(window.supabase&&typeof window.supabase.createClient==='function')?window.supabase.createClient(CICERO_SUPABASE_URL,CICERO_SUPABASE_KEY):null;
 
 let ciceroCloudUser=null;
 
@@ -542,7 +599,7 @@ function renderScore(reason){
 
  const voiceLabel=levels.length<5?'Chưa đủ dữ liệu':variance>.09?'Có thay đổi âm lượng':'Âm lượng khá đều';
 
- box.classList.remove('hidden');const pinned=document.getElementById('currentScore');if(pinned)pinned.textContent=overall+'/100';box.innerHTML=`<div class="studio-card" style="margin-top:16px"><div class="studio-head"><div class="studio-icon">📊</div><div><h2>Kết quả buổi luyện</h2><div class="small-note">${status} ${activeSkill===4?'Câu hỏi ứng biến: '+escapeHtml(selectedRoundQuestion)+'. Điểm tổng hợp từ phần thuyết trình và phần trả lời. ':''}Điểm chỉ là ước tính từ dữ liệu trình duyệt, không thay thế đánh giá của giáo viên.</div></div></div><div class="score-hero"><div class="score-ring"><b>${overall}/100</b></div><div><h3>ĐIỂM CỦA BẠN: ${overall}/100</h3><p style="margin:4px 0">${overall>=85?'Rất tốt!':overall>=70?'Đang tiến bộ!':'Cùng luyện thêm nhé!'}</p><span class="small-note">Thời gian: ${Math.floor(sessionSeconds/60)} phút ${sessionSeconds%60} giây · Nhận diện được ${words.length} từ</span></div></div><div class="metric-grid"><div class="metric"><div class="metric-top"><span>Tốc độ nói</span><span>🗣️</span></div><strong>${words.length<8?'—':wpm+' từ/phút'}</strong><div class="meter"><span style="width:${speedScore}%"></span></div><p class="small-note">${speedLabel}. Mốc tham khảo: 95–155 từ/phút.</p></div><div class="metric"><div class="metric-top"><span>Độ lưu loát</span><span>🌊</span></div><strong>${words.length<8?'—':fluencyScore+'/100'}</strong><div class="meter"><span style="width:${fluencyScore}%"></span></div><p class="small-note">${fluencyLabel}. Ước tính ${pauses} khoảng ngắt dài.</p></div><div class="metric"><div class="metric-top"><span>Độ biến đổi giọng</span><span>🎙️</span></div><strong>${levels.length<5?'—':voiceScore+'/100'}</strong><div class="meter"><span style="width:${voiceScore}%"></span></div><p class="small-note">${voiceLabel}; dựa trên thay đổi âm lượng, không đo chính xác cảm xúc hay ngữ điệu.</p></div><div class="metric"><div class="metric-top"><span>Thời lượng</span><span>⏱️</span></div><strong>${Math.floor(sessionSeconds/60)}:${String(sessionSeconds%60).padStart(2,'0')}</strong><div class="meter"><span style="width:${durationScore}%"></span></div><p class="small-note">${sessionSeconds>=30?'Đã có thời lượng luyện tập để tham khảo.':'Thử luyện lâu hơn để có kết quả ổn định hơn.'}</p></div><div class="metric"><div class="metric-top"><span>Hạn chế từ đệm</span><span>💬</span></div><strong>${words.length<8?'—':fillerCount+' từ đệm'}</strong><div class="meter"><span style="width:${clarityScore}%"></span></div><p class="small-note">${fillerCount===0?'Chưa phát hiện từ đệm phổ biến.':fillerCount<=2?'Có ít từ đệm, hãy tiếp tục chú ý.':'Thử thay từ đệm bằng một nhịp dừng ngắn.'}</p></div></div>${activeSkill===2&&refWords.length?`<div class="metric" style="margin-top:12px"><div class="metric-top"><span>Độ khớp với đoạn mẫu</span><span>📖</span></div><strong>${saidWords.length?readingScore+'/100':'Chưa đủ dữ liệu'}</strong><div class="meter"><span style="width:${readingScore}%"></span></div><p class="small-note">So sánh từ được nhận diện với đoạn mẫu; đây là độ khớp văn bản, không phải đánh giá chuyên gia về phát âm.</p></div>`:''}${activeSkill===2?(()=>{const articulation=Math.max(45,Math.min(96,words.length<8?50:Math.round(65+Math.min(words.length,100)*.22-fillerCount*2)));const clarity=Math.max(40,Math.min(96,words.length<8?48:Math.round(72+Math.min(words.length,80)*.2-fillerCount*3)));const lisp=words.length<8?50:Math.max(50,Math.min(90,Math.round(78-fillerCount*2)));const endings=words.length<8?50:Math.max(45,Math.min(92,Math.round(75+fluencyScore*.12-pauses*2)));const emphasis=Math.max(45,Math.min(92,Math.round(55+variance*220)));const intonation=levels.length<5?50:Math.max(45,Math.min(95,Math.round(58+variance*260)));const pace=speedScore;const vals=[articulation,clarity,lisp,endings,emphasis,intonation,pace];const names=['Phát âm tròn âm','Nói rõ chữ','Không nói ngọng','Không nuốt âm, mất âm cuối','Nhấn nhá đúng từ khóa','Ngữ điệu tự nhiên','Tốc độ nói phù hợp'];return `<div class="studio-card" style="margin-top:14px"><h3>🎤 Bảng đánh giá giọng nói</h3><p class="small-note">Điểm phần trăm là chỉ số ước tính từ nhận dạng lời nói, tốc độ, khoảng ngắt và biến thiên âm lượng. Trình duyệt không thể xác định đáng tin cậy nói ngọng, độ tròn âm hay âm cuối chỉ từ transcript; hãy nghe lại bản ghi (nếu có) để kiểm chứng các mục này.</p><div class="metric-grid">${names.map((name,i)=>`<div class="metric"><div class="metric-top"><span>${name}</span><span>${vals[i]}%</span></div><div class="meter"><span style="width:${vals[i]}%"></span></div><p class="small-note">${i===0?'Đọc chậm, mở khẩu hình vừa đủ và phát âm đủ âm tiết.':i===1?'Nói từng cụm rõ ràng, giảm tiếng ồn và giữ micro ổn định.':i===2?'Nghe lại các âm dễ lẫn; công cụ chưa tự chẩn đoán nói ngọng.':i===3?'Chú ý phụ âm cuối, không lướt nhanh qua cuối từ.':i===4?'Nhấn nhẹ từ khóa, không nhấn đều mọi từ.':i===5?'Thay đổi cao độ tự nhiên theo ý nghĩa câu.':'Mốc tham khảo khoảng 95–155 từ/phút.'}</p></div>`).join('')}</div><div class="feedback-item"><b>Nhận xét và hướng dẫn:</b><br>${wpm>155?'Bạn đang nói hơi nhanh. Hãy giảm nhịp, ngắt ở dấu câu và phát âm rõ phần cuối từ.':wpm>0&&wpm<95?'Tốc độ hơi chậm. Hãy nối các cụm từ tự nhiên nhưng vẫn giữ rõ âm.':'Tốc độ nói tương đối phù hợp. Tiếp tục luyện phát âm đủ âm tiết và nhấn từ khóa.'} ${fillerCount>2?'Bạn dùng khá nhiều từ đệm; thử dừng ngắn thay vì lặp “ừm”, “à”.':''}</div></div>`})():''}<div class="feedback-list"><div class="feedback-item"><b>Gợi ý cải thiện</b><br>${wpm>155?'Giảm tốc độ một chút, ngắt ở dấu câu và sau mỗi ý chính.':wpm>0&&wpm<95?'Nói nhanh hơn nhẹ, nối các ý bằng từ chuyển ý.':'Giữ tốc độ tự nhiên, nhấn rõ từ khóa quan trọng.'} ${fillerCount>2?'Hạn chế lặp “ừm”, “à”, “ý là”; có thể dừng ngắn để lấy ý.':''}</div><div class="feedback-item"><b>Độ rõ nội dung</b><br>${words.length>=30?'Trình duyệt nhận diện được khá nhiều từ; hãy kiểm tra lại phần transcript bên dưới.':'Dữ liệu nhận diện còn ít. Hãy nói gần micro hơn, giảm tiếng ồn và thử lại.'}</div></div><details style="margin-top:12px"><summary style="cursor:pointer;font-weight:800">Xem nội dung nhận diện</summary><p class="small-note">${escapeHtml(recognitionText||'Trình duyệt chưa nhận diện được lời nói. Kiểm tra quyền micro và hỗ trợ nhận dạng giọng nói của Chrome.')}</p></details><div class="session-controls" style="margin-top:14px"><button class="btn" id="saveScore">Lưu điểm này</button><button class="btn alt" id="retryPractice">Luyện lại</button></div><div id="scoreSaved" class="small-note" style="margin-top:8px"></div></div>`;
+ box.classList.remove('hidden');const pinned=document.getElementById('currentScore');if(pinned)pinned.textContent=overall+'/100';box.innerHTML=`<div class="studio-card" style="margin-top:16px"><div class="studio-head"><div class="studio-icon">📊</div><div><h2>Kết quả buổi luyện</h2><p class="small-note">Điểm ước tính từ bản nhận dạng giọng nói và các tín hiệu âm thanh của trình duyệt; đây chưa phải đánh giá AI đa phương thức và có thể sai lệch.</p><div class="small-note">${status} ${activeSkill===4?'Câu hỏi ứng biến: '+escapeHtml(selectedRoundQuestion)+'. Điểm tổng hợp từ phần thuyết trình và phần trả lời. ':''}Điểm chỉ là ước tính từ dữ liệu trình duyệt, không thay thế đánh giá của giáo viên.</div></div></div><div class="score-hero"><div class="score-ring"><b>${overall}/100</b></div><div><h3>ĐIỂM CỦA BẠN: ${overall}/100</h3><p style="margin:4px 0">${overall>=85?'Rất tốt!':overall>=70?'Đang tiến bộ!':'Cùng luyện thêm nhé!'}</p><span class="small-note">Thời gian: ${Math.floor(sessionSeconds/60)} phút ${sessionSeconds%60} giây · Nhận diện được ${words.length} từ</span></div></div><div class="metric-grid"><div class="metric"><div class="metric-top"><span>Tốc độ nói</span><span>🗣️</span></div><strong>${words.length<8?'—':wpm+' từ/phút'}</strong><div class="meter"><span style="width:${speedScore}%"></span></div><p class="small-note">${speedLabel}. Mốc tham khảo: 95–155 từ/phút.</p></div><div class="metric"><div class="metric-top"><span>Độ lưu loát</span><span>🌊</span></div><strong>${words.length<8?'—':fluencyScore+'/100'}</strong><div class="meter"><span style="width:${fluencyScore}%"></span></div><p class="small-note">${fluencyLabel}. Ước tính ${pauses} khoảng ngắt dài.</p></div><div class="metric"><div class="metric-top"><span>Độ biến đổi giọng</span><span>🎙️</span></div><strong>${levels.length<5?'—':voiceScore+'/100'}</strong><div class="meter"><span style="width:${voiceScore}%"></span></div><p class="small-note">${voiceLabel}; dựa trên thay đổi âm lượng, không đo chính xác cảm xúc hay ngữ điệu.</p></div><div class="metric"><div class="metric-top"><span>Thời lượng</span><span>⏱️</span></div><strong>${Math.floor(sessionSeconds/60)}:${String(sessionSeconds%60).padStart(2,'0')}</strong><div class="meter"><span style="width:${durationScore}%"></span></div><p class="small-note">${sessionSeconds>=30?'Đã có thời lượng luyện tập để tham khảo.':'Thử luyện lâu hơn để có kết quả ổn định hơn.'}</p></div><div class="metric"><div class="metric-top"><span>Hạn chế từ đệm</span><span>💬</span></div><strong>${words.length<8?'—':fillerCount+' từ đệm'}</strong><div class="meter"><span style="width:${clarityScore}%"></span></div><p class="small-note">${fillerCount===0?'Chưa phát hiện từ đệm phổ biến.':fillerCount<=2?'Có ít từ đệm, hãy tiếp tục chú ý.':'Thử thay từ đệm bằng một nhịp dừng ngắn.'}</p></div></div>${activeSkill===2&&refWords.length?`<div class="metric" style="margin-top:12px"><div class="metric-top"><span>Độ khớp với đoạn mẫu</span><span>📖</span></div><strong>${saidWords.length?readingScore+'/100':'Chưa đủ dữ liệu'}</strong><div class="meter"><span style="width:${readingScore}%"></span></div><p class="small-note">So sánh từ được nhận diện với đoạn mẫu; đây là độ khớp văn bản, không phải đánh giá chuyên gia về phát âm.</p></div>`:''}${activeSkill===2?(()=>{const articulation=Math.max(45,Math.min(96,words.length<8?50:Math.round(65+Math.min(words.length,100)*.22-fillerCount*2)));const clarity=Math.max(40,Math.min(96,words.length<8?48:Math.round(72+Math.min(words.length,80)*.2-fillerCount*3)));const lisp=words.length<8?50:Math.max(50,Math.min(90,Math.round(78-fillerCount*2)));const endings=words.length<8?50:Math.max(45,Math.min(92,Math.round(75+fluencyScore*.12-pauses*2)));const emphasis=Math.max(45,Math.min(92,Math.round(55+variance*220)));const intonation=levels.length<5?50:Math.max(45,Math.min(95,Math.round(58+variance*260)));const pace=speedScore;const vals=[articulation,clarity,lisp,endings,emphasis,intonation,pace];const names=['Phát âm tròn âm','Nói rõ chữ','Không nói ngọng','Không nuốt âm, mất âm cuối','Nhấn nhá đúng từ khóa','Ngữ điệu tự nhiên','Tốc độ nói phù hợp'];return `<div class="studio-card" style="margin-top:14px"><h3>🎤 Bảng đánh giá giọng nói</h3><p class="small-note">Điểm phần trăm là chỉ số ước tính từ nhận dạng lời nói, tốc độ, khoảng ngắt và biến thiên âm lượng. Trình duyệt không thể xác định đáng tin cậy nói ngọng, độ tròn âm hay âm cuối chỉ từ transcript; hãy nghe lại bản ghi (nếu có) để kiểm chứng các mục này.</p><div class="metric-grid">${names.map((name,i)=>`<div class="metric"><div class="metric-top"><span>${name}</span><span>${vals[i]}%</span></div><div class="meter"><span style="width:${vals[i]}%"></span></div><p class="small-note">${i===0?'Đọc chậm, mở khẩu hình vừa đủ và phát âm đủ âm tiết.':i===1?'Nói từng cụm rõ ràng, giảm tiếng ồn và giữ micro ổn định.':i===2?'Nghe lại các âm dễ lẫn; công cụ chưa tự chẩn đoán nói ngọng.':i===3?'Chú ý phụ âm cuối, không lướt nhanh qua cuối từ.':i===4?'Nhấn nhẹ từ khóa, không nhấn đều mọi từ.':i===5?'Thay đổi cao độ tự nhiên theo ý nghĩa câu.':'Mốc tham khảo khoảng 95–155 từ/phút.'}</p></div>`).join('')}</div><div class="feedback-item"><b>Nhận xét và hướng dẫn:</b><br>${wpm>155?'Bạn đang nói hơi nhanh. Hãy giảm nhịp, ngắt ở dấu câu và phát âm rõ phần cuối từ.':wpm>0&&wpm<95?'Tốc độ hơi chậm. Hãy nối các cụm từ tự nhiên nhưng vẫn giữ rõ âm.':'Tốc độ nói tương đối phù hợp. Tiếp tục luyện phát âm đủ âm tiết và nhấn từ khóa.'} ${fillerCount>2?'Bạn dùng khá nhiều từ đệm; thử dừng ngắn thay vì lặp “ừm”, “à”.':''}</div></div>`})():''}<div class="feedback-list"><div class="feedback-item"><b>Gợi ý cải thiện</b><br>${wpm>155?'Giảm tốc độ một chút, ngắt ở dấu câu và sau mỗi ý chính.':wpm>0&&wpm<95?'Nói nhanh hơn nhẹ, nối các ý bằng từ chuyển ý.':'Giữ tốc độ tự nhiên, nhấn rõ từ khóa quan trọng.'} ${fillerCount>2?'Hạn chế lặp “ừm”, “à”, “ý là”; có thể dừng ngắn để lấy ý.':''}</div><div class="feedback-item"><b>Độ rõ nội dung</b><br>${words.length>=30?'Trình duyệt nhận diện được khá nhiều từ; hãy kiểm tra lại phần transcript bên dưới.':'Dữ liệu nhận diện còn ít. Hãy nói gần micro hơn, giảm tiếng ồn và thử lại.'}</div></div><details style="margin-top:12px"><summary style="cursor:pointer;font-weight:800">Xem nội dung nhận diện</summary><p class="small-note">${escapeHtml(recognitionText||'Trình duyệt chưa nhận diện được lời nói. Kiểm tra quyền micro và hỗ trợ nhận dạng giọng nói của Chrome.')}</p></details><div class="session-controls" style="margin-top:14px"><button class="btn" id="saveScore">Lưu điểm này</button><button class="btn alt" id="retryPractice">Luyện lại</button></div><div id="scoreSaved" class="small-note" style="margin-top:8px"></div></div>`;
 
  document.getElementById('saveScore').onclick=()=>{let arr=JSON.parse(localStorage.getItem('ciceroResults')||'[]');arr.unshift({skill:skills[activeSkill].name,date:new Date().toLocaleString('vi-VN'),seconds:sessionSeconds,score:overall,wpm,fluency:fluencyScore,voice:voiceScore,reading:readingScore,words:words.length,notes:document.getElementById('topic')?.value||''});localStorage.setItem('ciceroResults',JSON.stringify(arr));if(ciceroCloudUser&&ciceroSupabase){ciceroSupabase.from('practice_results').insert({user_id:ciceroCloudUser.id,skill:skills[activeSkill].name,score:overall,details:{seconds:sessionSeconds,wpm,fluency:fluencyScore,voice:voiceScore,reading:readingScore,words:words.length,notes:document.getElementById('topic')?.value||''}}).then(({error})=>{if(error)console.warn('Cloud result sync:',error.message)});}const prof=JSON.parse(localStorage.getItem('ciceroProfile')||'{}');const playerName=prof.name||'Khách';let board=JSON.parse(localStorage.getItem('ciceroLocalBoard')||'[]');const existing=board.find(x=>x.name===playerName);if(existing)existing.score=Math.max(existing.score,overall);else board.push({name:playerName,score:overall});localStorage.setItem('ciceroLocalBoard',JSON.stringify(board));let msg='Đã lưu điểm trên thiết bị này.';if(activeSkill===0&&!bodyGuideRetry){document.getElementById('scoreSaved').innerHTML=msg+'<div class="guide-box"><b>Em muốn được hướng dẫn ngôn ngữ cơ thể không?</b><p>Chọn Có để xem mẹo, luyện lại và nhận thêm 5 huy hiệu sau lượt luyện lại.</p><button class="btn" id="wantGuide">Có, hướng dẫn em</button> <button class="btn alt" id="skipGuide">Không cần</button></div>';document.getElementById('wantGuide').onclick=()=>{bodyGuideRetry=true;openSkill(0)};document.getElementById('skipGuide').onclick=()=>{const n=overall>=80?10:overall>=50?5:2;document.getElementById('scoreSaved').textContent=msg+' Nhận '+awardBadges(n,'theo điểm số')+'.';};}else{const n=activeSkill===0&&bodyGuideRetry?5:(overall>=80?10:overall>=50?5:2);msg+=' '+awardBadges(n,activeSkill===0&&bodyGuideRetry?'sau khi luyện lại':'theo điểm số')+'.';document.getElementById('scoreSaved').textContent=msg;if(activeSkill===0&&bodyGuideRetry)bodyGuideRetry=false;}};document.getElementById('retryPractice').onclick=()=>openSkill(activeSkill);document.getElementById('saveScore').click();document.getElementById('saveScore').disabled=true;document.getElementById('saveScore').textContent='Đã tự lưu kết quả';setTimeout(()=>box.scrollIntoView({behavior:'smooth',block:'start'}),100);
 
@@ -824,13 +881,13 @@ function pageOriginal(name){stopTimer();if(questionPhaseTimer){clearInterval(que
 
 'Góp ý':`<h1 class="hero">💌 Góp ý</h1><div class="content-area panel"><h2>Đánh giá và gửi phản hồi</h2><p>Góp ý giúp Cicero ngày càng tốt hơn. Điền biểu mẫu và bấm gửi ngay trên website nhé.</p><form id="feedbackForm"><label for="feedbackName">Tên của bạn (không bắt buộc)</label><input id="feedbackName" class="field" maxlength="80" placeholder="Nhập tên hoặc để trống"><label for="feedbackType">Loại góp ý</label><select id="feedbackType" class="field"><option>Báo lỗi</option><option>Đề xuất tính năng</option><option>Góp ý nội dung</option><option>Chia sẻ cảm nhận</option><option>Khác</option></select><label>Đánh giá Cicero (1–5 sao)</label><div id="feedbackStars" role="radiogroup" aria-label="Đánh giá số sao" style="display:flex;gap:8px;margin:8px 0 16px"><button type="button" class="btn alt feedback-star" data-rating="1" aria-label="1 sao">★</button><button type="button" class="btn alt feedback-star" data-rating="2" aria-label="2 sao">★</button><button type="button" class="btn alt feedback-star" data-rating="3" aria-label="3 sao">★</button><button type="button" class="btn alt feedback-star" data-rating="4" aria-label="4 sao">★</button><button type="button" class="btn alt feedback-star" data-rating="5" aria-label="5 sao">★</button></div><input type="hidden" id="feedbackRating" value="5"><label for="feedbackMessage">Nội dung góp ý (không bắt buộc)</label><textarea id="feedbackMessage" class="field" rows="5" maxlength="5000" placeholder="Bạn muốn Cicero cải thiện điều gì?"></textarea><button class="btn" type="submit">✉️ Gửi góp ý</button>
 
-<p class="feedback-email-note" style="font-size:13px; margin-top:8px;">Nếu bạn không gửi được góp ý trên website, vui lòng gửi trực tiếp về email: luyenthuyettrinhciceroandco@gmail.com.</p><p id="feedbackStatus" aria-live="polite"></p></form><div class="mini"><p><b>Email nhận:</b> luyenthuyettrinhciceroandco@gmail.com</p></div></div>`,
+<p class="feedback-email-note" style="font-size:13px; margin-top:8px;">Nếu bạn không gửi được góp ý trên website, vui lòng gửi trực tiếp về email: luyenthuyettrinhciceroandco@gmail.com.</p><p id="feedbackStatus" aria-live="polite"></p></form><h3>📬 Góp ý từ cộng đồng</h3><div id="publicFeedbackList" class="feedback-list"><p>Đang tải góp ý...</p></div><div class="mini"><p><b>Email nhận:</b> luyenthuyettrinhciceroandco@gmail.com</p></div></div>`,
 
 'Trợ lý ảo':`<h1 class="hero">Trợ lý ảo Cicero</h1><div class="content-area panel"><h2>💬 Trò chuyện cùng Cicero AI</h2><p>Hỏi tự do về thuyết trình, học tập, đời sống hoặc chủ đề phù hợp khác.</p><div id="aiChatWindow" style="height:330px;overflow:auto;background:#f7ffff;border:1px solid #bfe7e5;border-radius:14px;padding:12px;margin:12px 0"></div><label for="aiQuestion">Câu hỏi của bạn</label><textarea id="aiQuestion" class="field" rows="3" maxlength="3000" placeholder="Nhập câu hỏi bất kỳ..."></textarea><button class="btn" id="askCicero">Gửi câu hỏi ✨</button><p id="aiStatus" class="small-note">Lịch sử trò chuyện lưu tạm trên thiết bị.</p><button class="btn alt" id="clearAiChat">Xóa cuộc trò chuyện</button><hr style="border:0;border-top:1px solid #bfe7e5;margin:22px 0"><h2>🎤 Tạo dàn ý bài nói</h2><p>Nhập chủ đề và thời lượng mong muốn.</p><label for="speechTopic">Chủ đề bài nói</label><input id="speechTopic" class="field" placeholder="Ví dụ: Vì sao nên đọc sách?" maxlength="180"><label for="speechMinutes">Thời lượng (1–60 phút)</label><input id="speechMinutes" class="field" type="number" min="1" max="60" step="1" value="3"><button class="btn alt" id="makeOutline">✨ Tạo dàn ý</button><div id="outline" class="result hidden"></div></div>`,
 
 'Nhân vật':`<h1 class="hero">20 người bạn động vật</h1><div class="content-area panel"><h2>🐾 Bộ sưu tập Cicero</h2><p>Chọn một con vật làm bạn đồng hành. Nhân vật mới có thể mở bằng huy hiệu trong cửa hàng.</p><div class="animal-grid" id="animalGrid"></div><div id="characterMsg" class="result">Chọn nhân vật bạn thích.</div></div>`,
 
-'Bạn bè':`<h1 class="hero">Bạn bè</h1><div class="content-area panel"><h2>🔗 Chia sẻ liên kết Cicero</h2><p>Gửi liên kết trang web cho bạn bè để họ mở Cicero trên thiết bị của mình.</p><div class="share-link"><input id="shareUrl" class="field" readonly aria-label="Liên kết website Cicero"><button class="btn" id="copyShareUrl">Sao chép liên kết</button></div><h2>💬 Khung trò chuyện Cicero</h2><p>Khung chat mẫu lưu tin nhắn trên thiết bị này. Để gửi tin cho bạn bè ở thiết bị khác cần kết nối cơ sở dữ liệu dùng chung.</p><label>Tên của bạn</label><input id="chatUser" class="field" placeholder="Tên hiển thị"><label>Trò chuyện với</label><input id="chatPartner" class="field" placeholder="Tên bạn muốn nhắn"><div id="chatStatus" class="small-note"></div><div id="chatWindow" style="height:260px;overflow:auto;background:#f7ffff;border:1px solid #bfe7e5;border-radius:14px;padding:12px;margin:12px 0"></div><div style="display:flex;gap:8px;align-items:end"><textarea id="chatInput" class="field" rows="2" style="flex:1" placeholder="Nhập tin nhắn..."></textarea><button class="btn" id="sendChat">Gửi</button></div></div>`,
+'Bạn bè':`<h1 class="hero">Bạn bè</h1><div class="content-area panel"><h2>🔗 Chia sẻ liên kết Cicero</h2><p>Gửi liên kết trang web cho bạn bè để họ mở Cicero trên thiết bị của mình.</p><div class="share-link"><input id="shareUrl" class="field" readonly aria-label="Liên kết website Cicero"><button class="btn" id="copyShareUrl">Sao chép liên kết</button></div><p id="shareMsg" class="small-note"></p><h2>💬 Khung trò chuyện Cicero</h2><p>Khung chat mẫu lưu tin nhắn trên thiết bị này. Để gửi tin cho bạn bè ở thiết bị khác cần kết nối cơ sở dữ liệu dùng chung.</p><label>Tên của bạn</label><input id="chatUser" class="field" placeholder="Tên hiển thị"><label>Trò chuyện với</label><input id="chatPartner" class="field" placeholder="Nhập đúng tên hiển thị của người nhận"><button class="btn alt" id="findChatPartner">Tìm người và mở chat</button><div id="chatStatus" class="small-note"></div><div id="chatWindow" style="height:260px;overflow:auto;background:#f7ffff;border:1px solid #bfe7e5;border-radius:14px;padding:12px;margin:12px 0"></div><div style="display:flex;gap:8px;align-items:end"><textarea id="chatInput" class="field" rows="2" style="flex:1" placeholder="Nhập tin nhắn..."></textarea><button class="btn" id="sendChat">Gửi</button></div></div>`,
 
 'Thi đấu':`<h1 class="hero">Đấu trường hùng biện</h1><div class="content-area panel"><h2>🎤 Thử thách nhanh</h2><p>Trả lời câu hỏi trong 30 giây. Hãy nói đủ ý, đưa ra lý do và ví dụ.</p><div id="question" class="question">${qs[questionIndex]}</div><div class="timer" id="challengeTimer">00:30</div><button class="btn" id="startChallenge">Bắt đầu 30 giây</button><button class="btn alt" id="nextQuestion">Câu hỏi khác</button><textarea class="field" rows="3" placeholder="Có thể ghi nhanh ý chính trước khi nói..."></textarea></div>`};view.innerHTML=pages[name]||pages['Luyện tập'];
 
@@ -840,83 +897,17 @@ function pageOriginal(name){stopTimer();if(questionPhaseTimer){clearInterval(que
 
  if(name==='Góp ý') {
 
-  const form=document.getElementById('feedbackForm');
+  const form=document.getElementById('feedbackForm');let chosenRating=5;
 
-  let chosenRating=5;
+  const paintStars=()=>{document.querySelectorAll('.feedback-star').forEach(btn=>{const on=Number(btn.dataset.rating)<=chosenRating;btn.style.color=on?'#f5a623':'#888';btn.setAttribute('aria-pressed',String(Number(btn.dataset.rating)===chosenRating));});document.getElementById('feedbackRating').value=String(chosenRating)};
 
-  const paintStars=()=>{
+  document.querySelectorAll('.feedback-star').forEach(btn=>btn.onclick=()=>{chosenRating=Number(btn.dataset.rating);paintStars()});paintStars();
 
-   document.querySelectorAll('.feedback-star').forEach(btn=>{
+  const list=document.getElementById('publicFeedbackList');
 
-    const on=Number(btn.dataset.rating)<=chosenRating;
+  const loadFeedback=async()=>{if(!ciceroSupabase){list.innerHTML='<p>Chưa kết nối cơ sở dữ liệu.</p>';return}const {data,error}=await ciceroSupabase.from('cicero_feedback').select('id,display_name,feedback_type,rating,message,created_at').order('created_at',{ascending:false}).limit(100);if(error){list.innerHTML='<p>Không tải được góp ý: '+escapeHtml(error.message)+'</p>';return}list.innerHTML=(data||[]).map(x=>`<div class="feedback-item"><b>${escapeHtml(x.display_name||'Ẩn danh')}</b> · ${escapeHtml(x.feedback_type||'Góp ý')} · ${escapeHtml(x.rating||'')}<p>${escapeHtml(x.message||'')}</p><small>${new Date(x.created_at).toLocaleString('vi-VN')}</small></div>`).join('')||'<p>Chưa có góp ý nào.</p>';};loadFeedback();
 
-    btn.style.color=on?'#f5a623':'#888';
-
-    btn.setAttribute('aria-pressed',String(Number(btn.dataset.rating)===chosenRating));
-
-   });
-
-   document.getElementById('feedbackRating').value=String(chosenRating);
-
-  };
-
-  document.querySelectorAll('.feedback-star').forEach(btn=>btn.onclick=()=>{
-
-   chosenRating=Number(btn.dataset.rating);paintStars();
-
-  });
-
-  paintStars();
-
-  form.onsubmit=(event)=>{
-
-   event.preventDefault();
-
-   const status=document.getElementById('feedbackStatus');
-
-   const name=document.getElementById('feedbackName').value.trim()||'Không cung cấp';
-
-   const type=document.getElementById('feedbackType').value;
-
-   const message=document.getElementById('feedbackMessage').value.trim();
-
-   const rating=document.getElementById('feedbackRating').value+' sao';
-
-   if(!message){status.textContent='M nhập nội dung góp ý trước nha.';document.getElementById('feedbackMessage').focus();return;}
-
-   const subject='Góp ý Cicero - '+type+' - '+rating;
-
-    status.textContent='Đang gửi góp ý...';
-
-    const submitBtn=form.querySelector('button[type="submit"]');
-
-    submitBtn.disabled=true;
-
-    fetch('https://formsubmit.co/ajax/luyenthuyettrinhciceroandco@gmail.com',{
-
-      method:'POST',
-
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-
-      body:JSON.stringify({_subject:subject,_template:'table',_captcha:'false',ten_nguoi_gui:name,loai_gop_y:type,danh_gia:rating,noi_dung_gop_y:message})
-
-    }).then(async response=>{
-
-      const data=await response.json().catch(()=>({}));
-
-      if(!response.ok || data.success===false) throw new Error('send_failed');
-
-      status.textContent='Đã gửi góp ý. Cảm ơn m nha!';
-
-      form.reset(); chosenRating=5; paintStars();
-
-    }).catch(()=>{
-
-      status.textContent='Chưa gửi được. Vui lòng kiểm tra kết nối mạng và thử gửi lại.';
-
-    }).finally(()=>{submitBtn.disabled=false;});
-
-  };
+  form.onsubmit=async event=>{event.preventDefault();const status=document.getElementById('feedbackStatus');const name=document.getElementById('feedbackName').value.trim()||'Ẩn danh';const type=document.getElementById('feedbackType').value;const message=document.getElementById('feedbackMessage').value.trim();const rating=Number(document.getElementById('feedbackRating').value);if(!message){status.textContent='Nhập nội dung góp ý trước nha.';document.getElementById('feedbackMessage').focus();return}const submitBtn=form.querySelector('button[type="submit"]');submitBtn.disabled=true;status.textContent='Đang lưu góp ý...';try{const {error}=await ciceroSupabase.from('cicero_feedback').insert({display_name:name,feedback_type:type,rating,message});if(error)throw error;status.textContent='Đã đăng góp ý công khai. Cảm ơn m!';form.reset();chosenRating=5;paintStars();await loadFeedback()}catch(e){status.textContent='Chưa lưu được góp ý: '+(e.message||'Lỗi kết nối')}finally{submitBtn.disabled=false}};
 
  }
 
@@ -932,7 +923,7 @@ function pageOriginal(name){stopTimer();if(questionPhaseTimer){clearInterval(que
 
   paintAi();
 
-  const ask=async()=>{const q=aiInput.value.trim();if(!q)return;const arr=aiHistory();arr.push({role:'user',text:q});localStorage.setItem(aiKey,JSON.stringify(arr));aiInput.value='';paintAi();aiStatus.textContent='Cicero đang suy nghĩ...';document.getElementById('askCicero').disabled=true;try{const session=(await ciceroSupabase.auth.getSession()).data.session;const response=await fetch(CICERO_SUPABASE_URL+'/functions/v1/cicero-ai',{method:'POST',headers:{'Content-Type':'application/json','apikey':CICERO_SUPABASE_KEY,'Authorization':'Bearer '+(session?.access_token||CICERO_SUPABASE_KEY)},body:JSON.stringify({question:q,history:arr.slice(-12)})});const data=await response.json();if(!response.ok)throw new Error(data.error||data.message||'Chưa kết nối được AI');const answer=data.answer||data.text||data.reply;if(!answer)throw new Error('AI chưa trả về nội dung.');arr.push({role:'assistant',text:answer});localStorage.setItem(aiKey,JSON.stringify(arr));aiStatus.textContent='Đã trả lời · Lịch sử lưu trên thiết bị.';paintAi()}catch(e){aiStatus.textContent='Chưa kết nối được AI: '+e.message+' (cần triển khai Edge Function cicero-ai).'}finally{document.getElementById('askCicero').disabled=false}};
+  const ask=async()=>{const q=aiInput.value.trim();if(!q)return;const arr=aiHistory();arr.push({role:'user',text:q});localStorage.setItem(aiKey,JSON.stringify(arr));aiInput.value='';paintAi();aiStatus.textContent='Cicero đang suy nghĩ...';document.getElementById('askCicero').disabled=true;try{const session=(await ciceroSupabase.auth.getSession()).data.session;const response=await fetch(CICERO_SUPABASE_URL+'/functions/v1/cicero-ai',{method:'POST',headers:{'Content-Type':'application/json','apikey':CICERO_SUPABASE_KEY,'Authorization':'Bearer '+(session?.access_token||CICERO_SUPABASE_KEY)},body:JSON.stringify({message:arr.slice(-12).map(m=>(m.role==="user"?"Người dùng":"Cicero")+": "+m.text).join("\n\n")})});const data=await response.json();if(!response.ok)throw new Error(data.error||data.message||'Chưa kết nối được AI');const answer=data.reply||data.answer||data.text;if(!answer)throw new Error('AI chưa trả về nội dung.');arr.push({role:'assistant',text:answer});localStorage.setItem(aiKey,JSON.stringify(arr));aiStatus.textContent='Đã trả lời · Lịch sử lưu trên thiết bị.';paintAi()}catch(e){aiStatus.textContent='Chưa kết nối được AI: '+e.message+' (cần triển khai Edge Function cicero-ai).'}finally{document.getElementById('askCicero').disabled=false}};
 
   document.getElementById('askCicero').onclick=ask;aiInput.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();ask()}});document.getElementById('clearAiChat').onclick=()=>{localStorage.removeItem(aiKey);paintAi();aiStatus.textContent='Đã xóa lịch sử trên thiết bị.'};
 
@@ -973,205 +964,46 @@ function pageOriginal(name){stopTimer();if(questionPhaseTimer){clearInterval(que
  }
 
  if(name==='Bảng xếp hạng'){
-
-  const leaderName=document.getElementById('leaderName');
-
-  const leaderMsg=document.getElementById('leaderMsg');
-
-  const rows=document.getElementById('leaderboardRows');
-
-  document.getElementById('leaderBadges').textContent=getBadges();
-
-  const loadCloudBoard=async()=>{
-
-    rows.innerHTML='<p>Đang tải bảng xếp hạng...</p>';
-
-    try{
-
-      const {data,error}=await ciceroSupabase.from('cicero_leaderboard')
-
-        .select('id,display_name,best_score')
-
-        .order('best_score',{ascending:false}).limit(50);
-
-      if(error)throw error;
-
-      rows.innerHTML=(data||[]).length?(data||[]).map((x,i)=>
-
-        `<div class="mini">${['🥇','🥈','🥉'][i]||'🏅'} <b>${escapeHtml(x.display_name||'Cicero member')}</b><span style="float:right">${Math.round(Number(x.best_score)||0)} điểm</span></div>`
-
-      ).join(''):'<p>Chưa có kết quả luyện tập được đồng bộ.</p>';
-
-    }catch(e){
-
-      rows.innerHTML='<p>Chưa tải được bảng xếp hạng trực tuyến: '+escapeHtml(e.message||'Lỗi kết nối')+'</p>';
-
-    }
-
-  };
-
-  (async()=>{
-
-    const {data}=await ciceroSupabase.auth.getSession();
-
-    const user=data.session?.user||ciceroCloudUser;
-
-    ciceroCloudUser=user||null;
-
-    const profile=JSON.parse(localStorage.getItem('ciceroProfile')||'{}');
-
-    leaderName.value=profile.name||user?.user_metadata?.display_name||'';
-
-    if(!user)leaderMsg.textContent='Đăng nhập tài khoản để cập nhật tên và gửi điểm lên bảng xếp hạng chung.';
-
-    await loadCloudBoard();
-
-  })();
-
-  document.getElementById('leaderLogin').textContent='Lưu tên lên bảng';
-
-  document.getElementById('leaderLogin').onclick=async()=>{
-
-    const displayName=leaderName.value.trim();
-
-    if(!displayName){leaderMsg.textContent='Nhập tên hiển thị trước nha.';return;}
-
-    const {data}=await ciceroSupabase.auth.getSession();
-
-    const user=data.session?.user;
-
-    if(!user){leaderMsg.textContent='M cần đăng nhập ở mục Tài khoản trước nha.';return;}
-
-    const {error}=await ciceroSupabase.from('profiles').upsert({id:user.id,display_name:displayName},{onConflict:'id'});
-
-    if(error){leaderMsg.textContent='Chưa lưu được tên: '+error.message;return;}
-
-    const profile=JSON.parse(localStorage.getItem('ciceroProfile')||'{}');
-
-    localStorage.setItem('ciceroProfile',JSON.stringify({...profile,name:displayName,loggedIn:true,email:user.email||''}));
-
-    leaderMsg.textContent='Đã cập nhật tên trên bảng xếp hạng chung!';
-
-    await loadCloudBoard();
-
-  };
-
-}if(name==='Đổi quà'){
-
- document.getElementById('rewardBadges').textContent=getBadges();
-
- const rewardInfo={
-
-  owl:{cost:10,label:'Cú Đêm'},char6:{cost:15,label:'Ếch Xanh'},char7:{cost:20,label:'Bướm Ngọc'},
-
-  char8:{cost:25,label:'Cánh Cụt'},char9:{cost:30,label:'Kỳ Lân'},char10:{cost:35,label:'Gấu Nâu'},
-
-  char11:{cost:40,label:'Sư Tử'},char12:{cost:45,label:'Hổ Vằn'},char13:{cost:50,label:'Koala'},
-
-  char14:{cost:55,label:'Gấu Mèo'},char15:{cost:60,label:'Hamster'},char16:{cost:65,label:'Rái Cá'},
-
-  char17:{cost:70,label:'Cá Heo'},char18:{cost:75,label:'Công Xanh'},char19:{cost:80,label:'Rồng Mây'}
-
- };
-
- const alreadyOwned=JSON.parse(localStorage.getItem('ciceroRewards')||'[]');
-
- document.querySelectorAll('[data-reward]').forEach(b=>{if(alreadyOwned.includes(b.dataset.reward)){b.textContent='Đã sở hữu ✓';b.disabled=true;}});
-
- document.querySelectorAll('[data-reward]').forEach(b=>b.onclick=()=>{
-
-  const id=b.dataset.reward, info=rewardInfo[id]; if(!info)return;
-
-  let owned=JSON.parse(localStorage.getItem('ciceroRewards')||'[]');
-
-  if(owned.includes(id)){document.getElementById('rewardMsg').textContent='Bạn đã sở hữu '+info.label+' rồi.';return}
-
-  if(getBadges()<info.cost){document.getElementById('rewardMsg').textContent='Chưa đủ huy hiệu để đổi '+info.label+'. Bạn đang có '+getBadges()+' huy hiệu, cần '+info.cost+' huy hiệu; còn thiếu '+(info.cost-getBadges())+' huy hiệu nữa.';return}
-
-  setBadges(getBadges()-info.cost);owned.push(id);localStorage.setItem('ciceroRewards',JSON.stringify(owned));
-
-  document.getElementById('rewardBadges').textContent=getBadges();b.textContent='Đã sở hữu ✓';b.disabled=true;
-
-  document.getElementById('rewardMsg').textContent='🎉 Đã mở khóa '+info.label+'! Đã trừ '+info.cost+' huy hiệu.';
-
- });
-
-}if(name==='Nhân vật'){const animals=[['🐰','Thỏ Mây'],['🦊','Cáo Cam'],['🐼','Gấu Trúc'],['🐱','Mèo Mun'],['🐶','Cún Bông'],['🦉','Cú Đêm'],['🐸','Ếch Xanh'],['🦋','Bướm Ngọc'],['🐧','Cánh Cụt'],['🦄','Kỳ Lân'],['🐻','Gấu Nâu'],['🦁','Sư Tử'],['🐯','Hổ Vằn'],['🐨','Koala'],['🦝','Gấu Mèo'],['🐹','Hamster'],['🦦','Rái Cá'],['🐬','Cá Heo'],['🦚','Công Xanh'],['🐲','Rồng Mây']];const owned=JSON.parse(localStorage.getItem('ciceroRewards')||'[]');document.getElementById('animalGrid').innerHTML=animals.map((a,i)=>{const unlocked=i<5||owned.includes(i===5?'owl':'char'+i);return `<button class="animal-card ${unlocked?'':'locked'}" data-animal="${i}"><span class="animal">${a[0]}</span><b>${a[1]}</b><div class="small-note">${unlocked?'Có thể chọn':'🔒 Chưa mở khóa'}</div></button>`}).join('');const savedPet=localStorage.getItem('ciceroCharacter');if(savedPet!==null){const activePet=document.querySelector('[data-animal="'+savedPet+'"]');if(activePet)activePet.classList.add('selected')}document.querySelectorAll('[data-animal]').forEach(b=>b.onclick=()=>{const i=+b.dataset.animal;const owned=JSON.parse(localStorage.getItem('ciceroRewards')||'[]');if(i>=5&&!owned.includes(i===5?'owl':'char'+i)){document.getElementById('characterMsg').textContent='Nhân vật này đang khóa. Hãy đổi quà trong cửa hàng để mở thêm.';return}document.querySelectorAll('.animal-card').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');localStorage.setItem('ciceroCharacter',b.dataset.animal);document.getElementById('characterMsg').textContent='Đã chọn '+animals[i][1]+' làm bạn đồng hành ✨';const goHome=document.createElement('button');goHome.className='btn';goHome.textContent='Về trang chính';goHome.onclick=()=>home();document.getElementById('characterMsg').appendChild(document.createElement('br'));document.getElementById('characterMsg').appendChild(goHome)})}
-
-if(name==='Bạn bè'){
-
- const shareUrl=document.getElementById('shareUrl');shareUrl.value=location.href.split('#')[0];document.getElementById('copyShareUrl').onclick=async()=>{try{await navigator.clipboard.writeText(shareUrl.value);document.getElementById('shareMsg').textContent='Đã sao chép liên kết.'}catch(e){shareUrl.focus();shareUrl.select();document.getElementById('shareMsg').textContent='Hãy sao chép liên kết đang được chọn.'}};
-
- const userEl=document.getElementById('chatUser'),partnerEl=document.getElementById('chatPartner'),inputEl=document.getElementById('chatInput'),win=document.getElementById('chatWindow');
-
- userEl.value=(JSON.parse(localStorage.getItem('ciceroProfile')||'{}').name||'');
-
- const drawLocal=()=>{win.innerHTML='<p style="text-align:center">Đăng nhập để chat online với bạn bè.</p>'};
-
- const loadCloud=async()=>{if(!ciceroCloudUser){drawLocal();return}const {data,error}=await ciceroSupabase.from('chat_messages').select('*').order('created_at',{ascending:true}).limit(100);if(error){win.innerHTML='<p>Không tải được tin nhắn: '+escapeHtml(error.message)+'</p>';return}win.innerHTML=(data||[]).map(m=>'<div style="margin:8px 0"><b>'+escapeHtml(m.sender_name||'Bạn')+'</b>: '+escapeHtml(m.content)+'</div>').join('')||'<p>Chưa có tin nhắn. Hãy gửi lời chào đầu tiên!</p>';win.scrollTop=win.scrollHeight;};
-
- const send=async()=>{const text=inputEl.value.trim();if(!text)return;if(!ciceroCloudUser){document.getElementById('chatStatus').textContent='Muốn nhắn tin trực tuyến, m cần đăng nhập trước.';return}const prof=JSON.parse(localStorage.getItem('ciceroProfile')||'{}');const {error}=await ciceroSupabase.from('chat_messages').insert({sender_id:ciceroCloudUser.id,sender_name:prof.name||ciceroCloudUser.email,content:text});if(error){document.getElementById('chatStatus').textContent='Gửi chưa được: '+error.message;return}inputEl.value='';await loadCloud()};
-
- document.getElementById('sendChat').onclick=send;inputEl.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send()}});loadCloud();if(ciceroCloudUser){ciceroSupabase.channel('cicero-chat-live').on('postgres_changes',{event:'INSERT',schema:'public',table:'chat_messages'},loadCloud).subscribe();}
-
+ view.innerHTML=`<h1 class="hero">Bảng xếp hạng</h1><div class="content-area panel"><h2>🏆 Đấu trường Cicero</h2><p>Bảng xếp hạng đồng bộ từ các kết quả luyện tập đã lưu trên Supabase.</p><div class="badge-count">🏅 Huy hiệu chăm chỉ: <span id="leaderBadges">${getBadges()}</span></div><div id="leaderboardRows" style="display:grid;gap:9px;margin-top:16px"><p>Đang tải bảng xếp hạng...</p></div><button class="btn alt" id="goAccount">Đăng ký / Đăng nhập</button><p class="small-note" id="leaderStatus">${ciceroCloudUser?'Đã đăng nhập.':'Đăng nhập để đồng bộ kết quả luyện tập.'}</p></div>`;
+ document.getElementById('goAccount').onclick=()=>page('Tài khoản');
+ const rows=document.getElementById('leaderboardRows'),status=document.getElementById('leaderStatus');
+ (async()=>{
+  if(!ciceroSupabase){rows.innerHTML='<p>Không tải được Supabase.</p>';return;}
+  const {data,error}=await ciceroSupabase.from('cicero_leaderboard').select('*').order('best_score',{ascending:false}).limit(100);
+  if(error){rows.innerHTML='<p>Chưa tải được bảng xếp hạng: '+escapeHtml(error.message)+'</p>';status.textContent='Kiểm tra quyền SELECT của view cicero_leaderboard.';return;}
+  const current=ciceroCloudUser?.id;
+  rows.innerHTML=(data||[]).map((u,i)=>`<div class="mini" style="display:flex;align-items:center;gap:10px"><b style="min-width:34px">${['🥇','🥈','🥉'][i]||('#'+(i+1))}</b><span style="flex:1"><b>${escapeHtml(u.display_name||'Thành viên')}</b>${u.id===current?' <span class="pill">Bạn</span>':''}</span><strong>${Math.round(Number(u.best_score)||0)} điểm</strong></div>`).join('')||'<p>Chưa có kết quả được đồng bộ. Hãy đăng nhập và hoàn thành một buổi luyện tập.</p>';
+  status.textContent=`Đã tải ${data?.length||0} thành viên từ Supabase.`;
+ })();return;
 }
 
-if(name==='Thi đấu'){document.getElementById('nextQuestion').onclick=()=>{questionIndex=(questionIndex+1)%qs.length;document.getElementById('question').textContent=qs[questionIndex]};document.getElementById('startChallenge').onclick=()=>{let left=30;document.getElementById('challengeTimer').textContent='00:30';let id=setInterval(()=>{left--;document.getElementById('challengeTimer').textContent='00:'+String(left).padStart(2,'0');if(left<=0){clearInterval(id);document.getElementById('challengeTimer').textContent='Hết giờ!';}},1000)}}
+pageOriginal(name);
 
-}
-
-function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-
-function renderHistory(){let el=document.getElementById('history');if(!el)return;let arr=JSON.parse(localStorage.getItem('ciceroResults')||'[]');el.innerHTML=arr.length?arr.slice(0,10).map(x=>`<div class="mini"><b>${escapeHtml(x.skill)}</b><br><small>${escapeHtml(x.date)}</small><p>Thời gian luyện: ${Math.floor(x.seconds/60)} phút ${x.seconds%60} giây${x.score!==undefined?' · Điểm: '+x.score+'/100':''}</p>${x.notes?'<p>Ghi chú: '+escapeHtml(x.notes)+'</p>':''}</div>`).join(''):'<p>Bạn chưa lưu buổi luyện tập nào.</p>'}
-
- 
-
-// Account and local leaderboard layer
-
-function ciceroUsers(){try{return JSON.parse(localStorage.getItem('ciceroUsers')||'[]')}catch(e){return []}}
-
-function ciceroSaveUsers(a){localStorage.setItem('ciceroUsers',JSON.stringify(a))}
-
-function ciceroCurrent(){try{return JSON.parse(localStorage.getItem('ciceroProfile')||'{}')}catch(e){return {}}}
-
-function ciceroGetBest(name){let rs=[];try{rs=JSON.parse(localStorage.getItem('ciceroResults')||'[]')}catch(e){};let mine=rs.filter(x=>String(x.name||'')===name||String(ciceroCurrent().name||'')===name);return mine.reduce((m,x)=>Math.max(m,Number(x.score)||0),0)}
-
-function page(name){
-
- 
-
- if(name==='Tài khoản'){
-
-  const current=JSON.parse(localStorage.getItem('ciceroProfile')||'{}');
-
-  view.innerHTML=`<h1 class="hero">Tài khoản Cicero</h1><div class="content-area panel"><h2>🌿 Đăng ký hoặc đăng nhập</h2><p>Dùng email để đồng bộ tài khoản giữa các thiết bị.</p><label>Email</label><input class="field" id="accountEmail" type="email" autocomplete="email" placeholder="ban@example.com"><label>Tên hiển thị</label><input class="field" id="accountName" maxlength="24" placeholder="Tên của bạn" value="${escapeHtml(current.name||'')}"><label>Mật khẩu</label><input class="field" id="accountPass" type="password" autocomplete="current-password" placeholder="Ít nhất 6 ký tự"><div class="session-controls"><button class="btn" id="registerAccount">Đăng ký</button><button class="btn alt" id="loginAccount">Đăng nhập</button><button class="btn alt" id="logoutAccount">Đăng xuất</button></div><div id="accountMsg" class="result">${ciceroCloudUser?'Đang đăng nhập: '+escapeHtml(ciceroCloudUser.email):'Chưa đăng nhập.'}</div><p class="small-note">Nếu đăng ký mới, hãy kiểm tra email xác nhận từ Supabase.</p></div>`;
-
-  const msg=document.getElementById('accountMsg');
-
-  const act=async(register)=>{const email=document.getElementById('accountEmail').value.trim();const name=document.getElementById('accountName').value.trim();const password=document.getElementById('accountPass').value;if(!ciceroSupabase){msg.textContent='Không tải được Supabase. Hãy tải lại trang.';return}if(!email||password.length<6){msg.textContent='Nhập email hợp lệ và mật khẩu ít nhất 6 ký tự.';return}msg.textContent='Đang xử lý...';try{let result;if(register){result=await ciceroSupabase.auth.signUp({email,password,options:{data:{display_name:name||email.split('@')[0]}}});if(result.error)throw result.error;if(result.data.user){await ciceroSupabase.from('profiles').upsert({id:result.data.user.id,display_name:name||email.split('@')[0]});}msg.textContent=result.data.session?'Đăng ký thành công!':'Đã gửi email xác nhận. Mở email xác nhận rồi đăng nhập.';}else{result=await ciceroSupabase.auth.signInWithPassword({email,password});if(result.error)throw result.error;ciceroSetCloudUser(result.data.user);localStorage.setItem('ciceroProfile',JSON.stringify({...current,name:name||result.data.user.user_metadata?.display_name||email.split('@')[0],email,loggedIn:true}));msg.textContent='Đăng nhập thành công! Đồng bộ cloud đã sẵn sàng.';}}catch(e){msg.textContent='Lỗi: '+(e.message||'Không thể thực hiện.')}}; 
-
-  document.getElementById('registerAccount').onclick=()=>act(true);document.getElementById('loginAccount').onclick=()=>act(false);
-
-  document.getElementById('logoutAccount').onclick=async()=>{await ciceroSupabase?.auth.signOut();ciceroSetCloudUser(null);msg.textContent='Đã đăng xuất.'};return;
-
- }
-
- 
-
- if(name==='Bảng xếp hạng'){
-
-  view.innerHTML=`<h1 class="hero">Bảng xếp hạng</h1><div class="content-area panel"><h2>🏆 Đấu trường Cicero</h2><p>Đăng nhập hoặc đăng ký để có tên trong bảng. Người mới vẫn xuất hiện với 0 điểm.</p><div class="badge-count">🏅 Huy hiệu chăm chỉ: <span id="leaderBadges">${getBadges()}</span></div><div id="leaderboardRows" style="display:grid;gap:9px;margin-top:16px"></div><button class="btn alt" id="goAccount">Đăng ký / Đăng nhập</button></div>`;
-
-  const draw=()=>{let board=[];try{board=JSON.parse(localStorage.getItem('ciceroLocalBoard')||'[]')}catch(e){};const users=ciceroUsers();users.forEach(u=>{if(!board.some(x=>x.name===u.name))board.push({name:u.name,score:0,updated:Date.now()})});const p=ciceroCurrent();if(p.name&&!board.some(x=>x.name===p.name))board.push({name:p.name,score:0,updated:Date.now()});board=board.map(x=>({...x,score:Math.max(Number(x.score)||0,ciceroGetBest(x.name))})).sort((a,b)=>b.score-a.score||a.name.localeCompare(b.name));localStorage.setItem('ciceroLocalBoard',JSON.stringify(board));document.getElementById('leaderboardRows').innerHTML=board.length?board.map((x,i)=>`<div class="mini" style="display:flex;align-items:center;gap:10px"><b style="min-width:34px">${['🥇','🥈','🥉'][i]||('#'+(i+1))}</b><span style="flex:1"><b>${escapeHtml(x.name)}</b>${x.name===p.name?' <span class="pill">Bạn</span>':''}</span><strong>${x.score} điểm</strong></div>`).join(''):'<p>Chưa có người chơi. Hãy đăng ký để xuất hiện đầu tiên!</p>'};draw();document.getElementById('goAccount').onclick=()=>page('Tài khoản');return;
-
- }
-
- pageOriginal(name);
 
 }
 
  
+
+
+// Mobile hamburger menu behavior
+const mobileMenuAside=document.querySelector('.app > aside');
+const mobileMenuToggle=document.querySelector('.mobile-menu-toggle');
+if(mobileMenuAside&&mobileMenuToggle){
+ mobileMenuToggle.addEventListener('click',()=>{const opened=mobileMenuAside.classList.toggle('menu-open');mobileMenuToggle.setAttribute('aria-expanded',String(opened));mobileMenuToggle.textContent=opened?'✕':'☰';mobileMenuToggle.setAttribute('aria-label',opened?'Đóng menu':'Mở menu');});
+ mobileMenuAside.querySelectorAll('.sidebtn').forEach(btn=>btn.addEventListener('click',()=>{mobileMenuAside.classList.remove('menu-open');mobileMenuToggle.setAttribute('aria-expanded','false');mobileMenuToggle.textContent='☰';mobileMenuToggle.setAttribute('aria-label','Mở menu');}));
+ document.addEventListener('click',e=>{if(window.innerWidth<=680&&!mobileMenuAside.contains(e.target)){mobileMenuAside.classList.remove('menu-open');mobileMenuToggle.setAttribute('aria-expanded','false');mobileMenuToggle.textContent='☰';mobileMenuToggle.setAttribute('aria-label','Mở menu');}});
+}
 
 document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-page]').forEach(x=>x.classList.remove('active'));b.classList.add('active');page(b.dataset.page)}));home();
 
-</script></body></html>
+</script>
+<script>
+// CICERO SAFETY/RESILIENCE PATCH
+window.addEventListener('unhandledrejection', event => {
+  console.warn('Cicero async error:', event.reason);
+});
+window.addEventListener('error', event => {
+  console.warn('Cicero runtime error:', event.message);
+});
+</script>
+</body></html>
