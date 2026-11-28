@@ -842,6 +842,24 @@ body{font-family:'Nunito','Trebuchet MS',Arial,sans-serif!important;background:r
 
 </style>
 
+ 
+
+<style id="cicero-camera-fix">
+
+.camera-frame{width:100%!important;min-height:clamp(360px,58vh,680px)!important;height:clamp(360px,58vh,680px)!important;aspect-ratio:16/9!important;background:#173e43!important;border-radius:22px!important;overflow:hidden!important;position:relative!important}
+
+.camera-frame video{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-height:none!important;object-fit:contain!important;background:#102f33!important;transition:transform .18s ease!important}
+
+.camera-frame video.hidden{display:none!important}
+
+.camera-frame.cicero-camera-full{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;min-height:100dvh!important;aspect-ratio:auto!important;z-index:99999!important;border-radius:0!important;background:#061e20!important}
+
+.camera-frame.cicero-camera-full video{object-fit:contain!important}
+
+@media(max-width:700px){.camera-frame{min-height:52vh!important;height:52vh!important;aspect-ratio:auto!important}}
+
+</style>
+
 </head><body><div class="app"><aside class="cicero-sidebar">
 
 <div class="mobile-menu-head"><button class="mobile-menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false">☰</button><div class="logo" data-page="Luyện tập" role="button" style="cursor:pointer">🦋 Cicero&amp;Co</div></div>
@@ -2214,6 +2232,10 @@ function ciceroGetBest(name){let rs=[];try{rs=JSON.parse(localStorage.getItem('c
 
 function page(name){
 
+ if(name==='Thuyết trình tiếp cận' && window.ciceroOpenAccessiblePresentation){window.ciceroOpenAccessiblePresentation();return;}
+
+ 
+
  
 
  
@@ -2398,7 +2420,7 @@ if(mobileMenuAside&&mobileMenuToggle){
 
    const tools=document.createElement('div');tools.id='ciceroPracticeTools';tools.className='cicero-upgrade-card';
 
-   tools.innerHTML=`<h3>🎛️ Điều khiển phòng luyện tập</h3>
+   tools.innerHTML=`<h3>🎛️ Điều khiển phòng luyện tập</h3><p class="small-note">Khung camera đã được mở rộng. Zoom trên 1× phóng gần hình; mức dưới 1× không thể tạo góc rộng hơn ống kính camera bằng phần mềm.</p>
 
     <div class="cicero-camera-tools"><label for="ciceroZoom">Zoom camera</label><select id="ciceroZoom"><option value="0.4">0.4×</option><option value="0.5">0.5×</option><option value="0.7">0.7×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option><option value="2.5">2.5×</option><option value="3">3×</option></select><button class="cicero-upgrade-btn alt" id="ciceroCamFull">⛶ Phóng camera</button><button class="cicero-upgrade-btn alt" id="ciceroPageFull">⛶ Toàn màn hình luyện tập</button></div>
 
@@ -2410,7 +2432,7 @@ if(mobileMenuAside&&mobileMenuToggle){
 
    frame.insertAdjacentElement('afterend',tools);
 
-   $('ciceroZoom').onchange=()=>{const z=Number($('ciceroZoom').value);if(cam){cam.style.transform=`scaleX(-1) scale(${z})`;cam.style.transformOrigin='center center';cam.style.objectFit='cover'}};
+   $('ciceroZoom').onchange=()=>{const z=Number($('ciceroZoom').value);if(cam){cam.style.transform=`scaleX(-1) scale(${z>1?z:1})`;cam.style.transformOrigin='center center';cam.style.objectFit='contain'}};
 
    const toggleFull=()=>{frame.classList.toggle('cicero-camera-full');if(frame.classList.contains('cicero-camera-full')){frame.scrollIntoView({block:'center'});$('ciceroCamFull').textContent='✕ Thoát toàn màn hình'}else $('ciceroCamFull').textContent='⛶ Phóng camera'};
 
@@ -2452,7 +2474,7 @@ if(mobileMenuAside&&mobileMenuToggle){
 
    <section class="cicero-upgrade-card"><h2>🗂️ Chuẩn bị bài thuyết trình</h2><div class="field"><label for="a11yTitle">Tên bài thuyết trình</label><input id="a11yTitle" class="field" placeholder="Ví dụ: Ước mơ của em"></div><div class="field"><label for="a11yScript">Nội dung / lời nhắc / kịch bản</label><textarea id="a11yScript" class="field" rows="9" placeholder="Dán nội dung bài nói hoặc các ý chính tại đây..."></textarea></div><div class="cicero-camera-tools"><button class="cicero-upgrade-btn" id="a11yReadScript">🔊 Đọc bài nói</button><button class="cicero-upgrade-btn alt" id="a11yStopScript">Dừng đọc</button><button class="cicero-upgrade-btn alt" id="a11ySaveScript">Lưu nội dung</button></div><div class="cicero-access-workspace"><div><h3>📝 Bản chép lời trực tiếp</h3><div id="a11yTranscript" class="cicero-transcript" aria-live="polite">Chưa bắt đầu nhận diện giọng nói.</div><div class="cicero-camera-tools"><button class="cicero-upgrade-btn" id="a11yStartSpeech">🎙️ Bắt đầu chuyển giọng nói thành chữ</button><button class="cicero-upgrade-btn alt" id="a11yStopSpeechRec">Dừng nhận diện</button></div></div><div><h3>📣 Teleprompter / nội dung đang đọc</h3><div id="a11yTeleprompter" class="teleprompter" tabindex="0">Nội dung bài nói sẽ hiển thị ở đây.</div></div></div></section>
 
-   <section class="cicero-upgrade-card"><h2>🎥 Camera và slide</h2><div class="cicero-camera-tools"><button class="cicero-upgrade-btn" id="a11yCamera">Bật camera</button><button class="cicero-upgrade-btn alt" id="a11yCameraStop">Tắt camera</button><label>Zoom <select id="a11yZoom"><option value=".4">0.4×</option><option value=".5">0.5×</option><option value=".7">0.7×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label><button class="cicero-upgrade-btn alt" id="a11yCamFull">⛶ Toàn màn hình camera</button></div><div class="camera-frame" id="a11yCameraFrame" style="position:relative;min-height:230px;background:#153c40;border-radius:18px;overflow:hidden;display:grid;place-items:center;color:white"><span id="a11yCamPlaceholder">Camera đang tắt</span><video id="a11yCamVideo" autoplay muted playsinline style="display:none;width:100%;max-height:460px;object-fit:contain"></video></div><div class="field"><label for="a11ySlide">Tải ảnh slide</label><input id="a11ySlide" type="file" accept="image/*"></div><div class="cicero-slide" id="a11ySlidePreview">Chưa có slide</div></section>
+   <section class="cicero-upgrade-card"><h2>🎥 Camera và slide</h2><div class="cicero-camera-tools"><button class="cicero-upgrade-btn" id="a11yCamera">Bật camera</button><button class="cicero-upgrade-btn alt" id="a11yCameraStop">Tắt camera</button><label>Zoom <select id="a11yZoom"><option value=".4">0.4×</option><option value=".5">0.5×</option><option value=".7">0.7×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label><button class="cicero-upgrade-btn alt" id="a11yCamFull">⛶ Toàn màn hình camera</button></div><div class="camera-frame" id="a11yCameraFrame" style="position:relative;width:100%;height:clamp(360px,58vh,680px);min-height:360px;background:#153c40;border-radius:18px;overflow:hidden;display:grid;place-items:center;color:white"><span id="a11yCamPlaceholder">Camera đang tắt</span><video id="a11yCamVideo" autoplay muted playsinline style="display:none;width:100%;max-height:460px;object-fit:contain"></video></div><div class="field"><label for="a11ySlide">Tải ảnh slide</label><input id="a11ySlide" type="file" accept="image/*"></div><div class="cicero-slide" id="a11ySlidePreview">Chưa có slide</div></section>
 
    <section class="cicero-upgrade-card"><h2>⏱️ Thời lượng buổi tập</h2><div class="cicero-camera-tools"><label for="a11yMinutes">Số phút</label><input id="a11yMinutes" type="number" min="1" max="60" value="3" style="width:90px"><strong id="a11yTimer" style="font-size:25px;color:#087f83">03:00</strong><button class="cicero-upgrade-btn" id="a11yStartTimer">Bắt đầu</button><button class="cicero-upgrade-btn alt" id="a11yFinish">Kết thúc và lưu</button></div><p id="a11yStatus" aria-live="polite">Khi hết giờ, buổi luyện tự dừng và lưu thời lượng.</p></section>`;
 
@@ -2503,6 +2525,8 @@ if(mobileMenuAside&&mobileMenuToggle){
    $('a11yScript').focus();
 
  }
+
+ window.ciceroOpenAccessiblePresentation=renderAccessiblePresentation;
 
  // Replace only the navigation page dispatcher after the existing app functions are defined.
 
