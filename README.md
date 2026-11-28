@@ -860,13 +860,339 @@ body{font-family:'Nunito','Trebuchet MS',Arial,sans-serif!important;background:r
 
 </style>
 
+ 
+
+<style id="cicero-body-practice-layout-fix">
+
+/* Trang Luyện ngôn ngữ cơ thể: camera rộng trước, hướng dẫn nhỏ gọn bên dưới */
+
+.practice-layout{
+
+  display:flex!important;
+
+  flex-direction:column!important;
+
+  gap:14px!important;
+
+  align-items:stretch!important;
+
+}
+
+.practice-layout > .studio-card:first-child{
+
+  width:100%!important;
+
+  max-width:none!important;
+
+  padding:22px!important;
+
+}
+
+.practice-layout > .studio-card:first-child .camera-frame{
+
+  width:100%!important;
+
+  height:clamp(430px,68vh,760px)!important;
+
+  min-height:430px!important;
+
+  max-height:760px!important;
+
+  aspect-ratio:16/9!important;
+
+  margin:14px 0!important;
+
+  border-radius:24px!important;
+
+  background:linear-gradient(135deg,#d8f5ef,#edf5ff)!important;
+
+}
+
+.practice-layout > .studio-card:first-child .camera-frame video{
+
+  position:absolute!important;
+
+  inset:0!important;
+
+  width:100%!important;
+
+  height:100%!important;
+
+  max-height:none!important;
+
+  object-fit:contain!important;
+
+  background:#e5f5f3!important;
+
+}
+
+.practice-layout > .studio-card:nth-child(2){
+
+  width:100%!important;
+
+  max-width:none!important;
+
+  padding:14px 18px!important;
+
+  border-radius:19px!important;
+
+  display:grid!important;
+
+  grid-template-columns:minmax(180px,.35fr) minmax(0,1fr)!important;
+
+  align-items:center!important;
+
+  gap:10px 18px!important;
+
+}
+
+.practice-layout > .studio-card:nth-child(2) .studio-head{
+
+  margin:0!important;
+
+  align-self:start!important;
+
+}
+
+.practice-layout > .studio-card:nth-child(2) #bodyHandGuide{
+
+  min-height:110px!important;
+
+  padding:10px!important;
+
+}
+
+.practice-layout > .studio-card:nth-child(2) #bodyHandGuide svg{
+
+  width:78px!important;
+
+  height:78px!important;
+
+}
+
+.practice-layout > .studio-card:nth-child(2) #bodyHandGuide p{
+
+  margin:4px 0!important;
+
+  font-size:13px!important;
+
+}
+
+@media(max-width:700px){
+
+ .practice-layout > .studio-card:first-child{padding:14px!important}
+
+ .practice-layout > .studio-card:first-child .camera-frame{
+
+   height:55vh!important;min-height:320px!important;aspect-ratio:auto!important;
+
+ }
+
+ .practice-layout > .studio-card:nth-child(2){
+
+   display:block!important;padding:13px!important;
+
+ }
+
+ .practice-layout > .studio-card:nth-child(2) .studio-head{margin-bottom:9px!important}
+
+}
+
+</style>
+
+ 
+
+<style id="cicero-accessible-preview-style">
+
+.cicero-accessible-page{max-width:1180px;margin:0 auto;padding:22px!important}
+
+.cicero-accessible-page .cicero-upgrade-card{padding:22px!important;margin:0 0 18px!important;border-radius:22px!important}
+
+.cicero-accessible-page h1{font-size:clamp(27px,3vw,38px)!important}
+
+.cicero-accessible-page h2{font-size:clamp(19px,2vw,24px)!important}
+
+.cicero-accessible-page p,.cicero-accessible-page label{line-height:1.65}
+
+.cicero-accessible-page button,.cicero-accessible-page select,.cicero-accessible-page input,.cicero-accessible-page textarea{min-height:44px}
+
+.cicero-accessible-page button:focus-visible,.cicero-accessible-page input:focus-visible,.cicero-accessible-page textarea:focus-visible,.cicero-accessible-page select:focus-visible,.cicero-accessible-page [tabindex]:focus-visible{outline:4px solid #e69b20!important;outline-offset:3px!important}
+
+.cicero-accessible-page .camera-frame{width:100%!important;height:clamp(390px,60vh,680px)!important;min-height:390px!important;background:#173e43!important}
+
+.cicero-accessible-page #a11yCamVideo{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-height:none!important;object-fit:contain!important;transform-origin:center center}
+
+.cicero-accessible-page .cicero-transcript,.cicero-accessible-page .teleprompter{font-size:18px!important;line-height:1.7!important;min-height:110px}
+
+.cicero-accessible-page.cicero-a11y-large{font-size:1.25em!important}
+
+.cicero-accessible-page.cicero-high-contrast{background:#000!important;color:#fff!important}
+
+.cicero-accessible-page.cicero-high-contrast .cicero-upgrade-card{background:#111!important;color:#fff!important;border:2px solid #fff!important}
+
+.cicero-accessible-page.cicero-high-contrast h1,.cicero-accessible-page.cicero-high-contrast h2,.cicero-accessible-page.cicero-high-contrast p,.cicero-accessible-page.cicero-high-contrast label{color:#fff!important}
+
+.cicero-accessible-page .cicero-slide img{max-width:100%;max-height:340px;object-fit:contain}
+
+@media(max-width:700px){.cicero-accessible-page{padding:12px!important}.cicero-accessible-page .cicero-upgrade-card{padding:15px!important}.cicero-accessible-page .camera-frame{height:52vh!important;min-height:320px!important}}
+
+</style>
+
+ 
+
+<style id="cicero-ai-practice-layout">
+
+/* Keep Cicero's original mint striped page background */
+
+body{
+
+ background-color:#d9f5ef!important;
+
+ background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.30) 0,rgba(255,255,255,.30) 18px,rgba(139,211,203,.16) 18px,rgba(139,211,203,.16) 36px)!important;
+
+}
+
+#view:has(.practice-layout){
+
+ max-width:none!important;
+
+}
+
+#view:has(.practice-layout) .practice-layout{
+
+ display:grid!important;
+
+ grid-template-columns:minmax(0,1fr) 290px!important;
+
+ gap:16px!important;
+
+ align-items:start!important;
+
+}
+
+#view:has(.practice-layout) .practice-layout>.studio-card:first-child{
+
+ min-width:0!important;
+
+ padding:18px!important;
+
+ border-radius:24px!important;
+
+}
+
+#view:has(.practice-layout) .practice-layout>.studio-card:first-child .camera-frame{
+
+ width:100%!important;
+
+ height:clamp(430px,66vh,720px)!important;
+
+ min-height:430px!important;
+
+ aspect-ratio:16/9!important;
+
+ border:3px solid #a9e8df!important;
+
+ border-radius:22px!important;
+
+ background:linear-gradient(135deg,#dff7f3,#e9f3ff)!important;
+
+ overflow:hidden!important;
+
+}
+
+#view:has(.practice-layout) .practice-layout>.studio-card:first-child .camera-frame video{
+
+ width:100%!important;height:100%!important;max-height:none!important;
+
+ object-fit:contain!important;background:#dff3ef!important;
+
+}
+
+#view:has(.practice-layout) #ciceroPracticeTools{
+
+ margin-top:12px!important;
+
+ padding:16px!important;
+
+ border-radius:20px!important;
+
+ background:rgba(239,251,248,.96)!important;
+
+}
+
+#view:has(.practice-layout) #ciceroPracticeTools h3{font-size:16px!important;margin:8px 0!important}
+
+#view:has(.practice-layout) .practice-layout>.studio-card:nth-child(2){
+
+ padding:16px!important;border-radius:22px!important;
+
+ position:sticky!important;top:12px!important;
+
+}
+
+#view:has(.practice-layout) #bodyHandGuide{
+
+ min-height:120px!important;padding:12px!important;
+
+}
+
+#view:has(.practice-layout) #bodyHandGuide svg{width:76px!important;height:76px!important}
+
+#view:has(.practice-layout) #bodyStepDesc{font-size:13px!important}
+
+#view:has(.practice-layout) .practice-layout>.studio-card:first-child .studio-head h2{
+
+ font-size:25px!important;color:#4965b4!important;
+
+}
+
+#view:has(.practice-layout) .practice-layout>.studio-card:first-child .session-controls{
+
+ display:flex!important;flex-wrap:wrap!important;gap:10px!important;
+
+}
+
+#view:has(.practice-layout) .practice-layout>.studio-card:first-child .session-controls .btn{
+
+ min-height:48px!important;border-radius:16px!important;
+
+}
+
+#view:has(.practice-layout) .studio-card:has(#autoBodyStatus){
+
+ margin-top:16px!important;border-radius:22px!important;
+
+}
+
+@media(max-width:850px){
+
+ #view:has(.practice-layout) .practice-layout{grid-template-columns:1fr!important}
+
+ #view:has(.practice-layout) .practice-layout>.studio-card:nth-child(2){position:static!important}
+
+ #view:has(.practice-layout) .practice-layout>.studio-card:first-child .camera-frame{
+
+   height:55vh!important;min-height:320px!important;aspect-ratio:auto!important;
+
+ }
+
+}
+
+</style>
+
+<style id="cicero-final-fixes">
+
+.nav-group-title{user-select:none}.cicero-file-picker{background:#f5fffa;border:1px solid #ccece0;border-radius:16px;padding:14px;margin:10px 0}.cicero-file-picker input[type=file]{position:absolute!important;width:1px!important;height:1px!important;opacity:0!important;overflow:hidden!important}.cicero-file-picker label{display:inline-flex;align-items:center;justify-content:center;margin:4px 6px 4px 0;cursor:pointer}.cicero-file-picker label:focus-within{outline:2px solid #087f83}.cicero-file-picker .small-note{margin:9px 0}.cicero-file-picker #ciceroSelectedFiles{line-height:1.8;overflow-wrap:anywhere}.cicero-slide{min-height:70px}.cicero-slide img{max-width:100%;height:auto}.cicero-upgrade-card{margin-top:16px}
+
+</style>
+
 </head><body><div class="app"><aside class="cicero-sidebar">
 
-<div class="mobile-menu-head"><button class="mobile-menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false">☰</button><div class="logo" data-page="Luyện tập" role="button" style="cursor:pointer">🦋 Cicero&amp;Co</div></div>
+<div class="mobile-menu-head"><button class="mobile-menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false">☰</button><div class="logo" data-page="Luyện tập" role="button" style="cursor:pointer">Cicero&amp;Co</div></div>
 
-<div class="nav-group"><div class="nav-group-title">🏠 Không gian</div><button class="sidebtn" data-page="Luyện tập">🏡 Trang chủ</button></div>
+ 
 
-<div class="nav-group"><div class="nav-group-title">📚 Học tập</div><button class="sidebtn" data-page="Luyện tập">🎤 Luyện tập</button><button class="sidebtn" data-page="Thuyết trình tiếp cận">🦯 Thuyết trình tiếp cận</button><button class="sidebtn" data-page="Đánh giá">📊 Đánh giá</button><button class="sidebtn" data-page="Kiến thức">📖 Kiến thức</button><button class="sidebtn" data-page="Trợ lý ảo">🤖 Trợ lý ảo</button></div>
+<div class="nav-group"><div class="nav-group-title">📚 Học tập</div><button class="sidebtn" data-page="Luyện tập">🎤 Luyện tập</button><button class="sidebtn" data-page="Đánh giá">📊 Đánh giá</button><button class="sidebtn" data-page="Kiến thức">📖 Kiến thức</button><button class="sidebtn" data-page="Trợ lý ảo">🤖 Trợ lý ảo</button></div>
 
 <div class="nav-group"><div class="nav-group-title">💬 Cộng đồng</div><button class="sidebtn" data-page="Bạn bè">👥 Bạn bè</button><button class="sidebtn" data-page="Thi đấu">🏅 Thi đấu</button><button class="sidebtn" data-page="Bảng xếp hạng">🏆 Bảng xếp hạng</button></div>
 
@@ -874,7 +1200,7 @@ body{font-family:'Nunito','Trebuchet MS',Arial,sans-serif!important;background:r
 
 <div class="nav-group"><div class="nav-group-title">✉️ Khác</div><button class="sidebtn" data-page="Góp ý">💌 Góp ý</button></div>
 
-</aside><main><nav class="topbar"><div class="topbar-brand">✨ CICERO · CÙNG BẠN TỰ TIN TỎA SÁNG</div><div class="topbar-actions"><button class="nav" data-page="Đánh giá">📈 Tiến độ</button><button class="nav" data-page="Thuyết trình tiếp cận">♿ Truy cập dễ dàng</button><button class="nav" data-page="Tài khoản">👤 Tài khoản</button></div></nav><div id="view"></div></main></div>
+</aside><main><nav class="topbar"><div class="topbar-brand">Cicero&amp;Co <span>· Cùng bạn tự tin tỏa sáng</span></div><div class="topbar-actions"><button class="nav" data-page="Đánh giá">📈 Tiến độ</button><button class="nav" data-page="Tài khoản">👤 Tài khoản</button></div></nav><div id="view"></div></main></div>
 
  
 
@@ -1022,7 +1348,7 @@ function ciceroSetCloudUser(user){ciceroCloudUser=user;const p=JSON.parse(localS
 
  
 
-function home(){stopTimer();const navItems=[['Luyện tập','🧠'],['Cá nhân','🌷'],['Bạn bè','💌'],['Thi đấu','🏆'],['Kiến thức','📚'],['Tài khoản','🔐']];let chosen=Number(localStorage.getItem('ciceroCharacter')||0);const critters=[['🐰','Thỏ Mây'],['🦊','Cáo Cam'],['🐼','Gấu Trúc'],['🐱','Mèo Mun'],['🐶','Cún Bông'],['🦉','Cú Đêm'],['🐸','Ếch Xanh'],['🦋','Bướm Ngọc'],['🐧','Cánh Cụt'],['🦄','Kỳ Lân'],['🐻','Gấu Nâu'],['🦁','Sư Tử'],['🐯','Hổ Vằn'],['🐨','Koala'],['🦝','Gấu Mèo'],['🐹','Hamster'],['🦦','Rái Cá'],['🐬','Cá Heo'],['🦚','Công Xanh'],['🐲','Rồng Mây']];const pet=critters[chosen]||critters[0];view.innerHTML=`<h1 class="hero">Hôm nay bạn muốn luyện gì nào?</h1><div class="companion-home"><span class="mascot">${pet[0]}</span><div><b>Bạn đồng hành: ${pet[1]}</b><div class="small-note">Chạm để chọn một người bạn khác.</div><button class="btn alt" id="chooseCompanionHome">🐾 Chọn bạn đồng hành</button></div></div><section class="grid">${skills.map((s,i)=>`<button class="skill" data-skill="${i}"><span class="art">${s.emoji}</span><span class="skill-label">${s.name.replace(' & ',' &amp; ').replace(' cơ thể','<br>cơ thể').replace('phản xạ &amp; ứng biến','phản xạ<br>&amp; ứng biến').replace('Luyện tập tổng hợp','Luyện tập<br>tổng hợp')}</span></button>`).join('')}</section><div class="notice">Chọn một kỹ năng để bắt đầu ✨</div><div class="page-cloud-decoration" aria-hidden="true"></div>`;view.querySelectorAll('[data-skill]').forEach(b=>b.onclick=()=>openSkill(+b.dataset.skill));document.getElementById('chooseCompanionHome').onclick=()=>page('Nhân vật')}
+function home(){stopTimer();const navItems=[['Luyện tập','🧠'],['Cá nhân','🌷'],['Bạn bè','💌'],['Thi đấu','🏆'],['Kiến thức','📚'],['Tài khoản','🔐']];let chosen=Number(localStorage.getItem('ciceroCharacter')||0);const critters=[['🐰','Thỏ Mây'],['🦊','Cáo Cam'],['🐼','Gấu Trúc'],['🐱','Mèo Mun'],['🐶','Cún Bông'],['🦉','Cú Đêm'],['🐸','Ếch Xanh'],['🦋','Bướm Ngọc'],['🐧','Cánh Cụt'],['🦄','Kỳ Lân'],['🐻','Gấu Nâu'],['🦁','Sư Tử'],['🐯','Hổ Vằn'],['🐨','Koala'],['🦝','Gấu Mèo'],['🐹','Hamster'],['🦦','Rái Cá'],['🐬','Cá Heo'],['🦚','Công Xanh'],['🐲','Rồng Mây']];const pet=critters[chosen]||critters[0];view.innerHTML=`<h1 class="hero">Chọn nội dung luyện tập</h1><div class="companion-home"><span class="mascot">${pet[0]}</span><div><b>Bạn đồng hành: ${pet[1]}</b><div class="small-note">Chạm để chọn một người bạn khác.</div><button class="btn alt" id="chooseCompanionHome">🐾 Chọn bạn đồng hành</button></div></div><section class="grid">${skills.map((s,i)=>`<button class="skill" data-skill="${i}"><span class="art">${s.emoji}</span><span class="skill-label">${s.name.replace(' & ',' &amp; ').replace(' cơ thể','<br>cơ thể').replace('phản xạ &amp; ứng biến','phản xạ<br>&amp; ứng biến').replace('Luyện tập tổng hợp','Luyện tập<br>tổng hợp')}</span></button>`).join('')}</section><div class="notice">Chọn một kỹ năng để bắt đầu luyện tập ✨</div><div class="page-cloud-decoration" aria-hidden="true"></div>`;view.querySelectorAll('[data-skill]').forEach(b=>b.onclick=()=>openSkill(+b.dataset.skill));document.getElementById('chooseCompanionHome').onclick=()=>page('Nhân vật')}
 
  
 
@@ -1678,7 +2004,33 @@ function renderBodyLanguageRoom(){
 
  
 
- document.getElementById('bodyCamStop').onclick=stopBodyCam;
+ document.getElementById('bodyCamStop').onclick=()=>{
+
+   stopBodyCam();
+
+   if(poseLatest && !document.getElementById('bodyResult').classList.contains('hidden')){
+
+     setTimeout(()=>page('Đánh giá'),350);
+
+   }else if(poseLatest){
+
+     document.getElementById('bodyComplete').click();
+
+     setTimeout(()=>page('Đánh giá'),650);
+
+   }else{
+
+     const arr=JSON.parse(localStorage.getItem('ciceroResults')||'[]');
+
+     arr.unshift({skill:'Luyện ngôn ngữ cơ thể',date:new Date().toLocaleString('vi-VN'),seconds:0,score:null,notes:'Buổi luyện kết thúc; chưa đủ dữ liệu camera để chấm điểm.'});
+
+     localStorage.setItem('ciceroResults',JSON.stringify(arr));
+
+     setTimeout(()=>page('Đánh giá'),350);
+
+   }
+
+ };
 
  
 
@@ -1690,7 +2042,7 @@ function renderBodyLanguageRoom(){
 
  
 
- document.getElementById('bodyComplete').onclick=()=>{if(!poseLatest){document.getElementById('autoBodyStatus').textContent='Chưa nhận diện được cơ thể. Hãy bật camera và đứng trong khung hình.';return}const lm=poseLatest,vis=(i)=>(lm[i]&&(lm[i].visibility??0)>0.45);const handFrame=vis(15)&&vis(16)&&[15,16].every(i=>lm[i].x>0.02&&lm[i].x<0.98&&lm[i].y>0.03&&lm[i].y<0.98);const noFace=vis(0)&&vis(15)&&vis(16)&&Math.hypot(lm[15].x-lm[0].x,lm[15].y-lm[0].y)>0.10&&Math.hypot(lm[16].x-lm[0].x,lm[16].y-lm[0].y)>0.10;const shoulders=vis(11)&&vis(12)&&Math.abs(lm[11].y-lm[12].y)<0.12;const upright=vis(11)&&vis(12)&&vis(23)&&vis(24)&&Math.abs(((lm[11].x+lm[12].x)/2)-((lm[23].x+lm[24].x)/2))<0.18;const symmetry=shoulders?Math.max(0,Math.min(100,Math.round(100-Math.abs(lm[11].y-lm[12].y)*500))):0;const pct=[noFace?100:35,handFrame?100:30,symmetry,upright?90:40,handFrame?80:45,shoulders?80:45,handFrame&&noFace?80:45];const labels=['Tay không che mặt','Tay xuất hiện đúng khung hình','Độ cân xứng hai bên vai','Tư thế đứng thẳng, ổn định','Cử chỉ tay phù hợp nội dung','Động tác tay tự nhiên, không quá cứng','Mức độ phối hợp giữa hai tay'];const score=Math.round(pct.reduce((a,b)=>a+b,0)/pct.length);completed++;const res=document.getElementById('bodyResult');res.classList.remove('hidden');res.innerHTML=`<b>📊 BẢNG ĐÁNH GIÁ NGÔN NGỮ CƠ THỂ: ${score}/100</b><p class="small-note">Các mục dựa trên khung hình camera là ước tính theo vị trí cơ thể; mức phù hợp nội dung, tự nhiên và phối hợp là chỉ số tham khảo, chưa phải phân tích ngữ nghĩa cử chỉ.</p><div class="metric-grid">${labels.map((label,i)=>`<div class="metric"><div class="metric-top"><span>${label}</span><span>${pct[i]}%</span></div><div class="meter"><span style="width:${pct[i]}%"></span></div><p class="small-note">${pct[i]>=80?'Tốt, tiếp tục duy trì.':'Cần điều chỉnh: '+(['Giữ bàn tay cách vùng mặt khi minh họa.','Lùi camera để cả hai bàn tay luôn nằm trong hình.','Thả lỏng vai và giữ hai bên vai ngang hơn.','Giữ thân trên thẳng, trọng tâm ổn định.','Chọn cử chỉ minh họa đúng ý đang nói.','Thả lỏng cổ tay, tránh giữ tay cứng.','Dùng hai tay nhịp nhàng, tránh chuyển động lệch nhau.'][i])}</p></div>`).join('')}</div><div class="feedback-list"><div class="feedback-item"><b>Điểm tổng:</b> ${score}% — trung bình của 7 tiêu chí.</div><div class="feedback-item"><b>Nhận xét lỗi và cách sửa:</b><ul>${labels.map((label,i)=>`<li><b>${label} (${pct[i]}%):</b> ${pct[i]>=80?'Đang thực hiện khá tốt, tiếp tục duy trì.':['Giữ hai bàn tay cách vùng mặt khi minh họa, tránh đưa tay ngang mặt.','Điều chỉnh khoảng cách camera để cả hai bàn tay luôn nằm trọn trong khung hình.','Thả lỏng vai, giữ hai bên vai cân bằng và tránh nghiêng người.','Giữ lưng thẳng tự nhiên, đầu và thân trên ổn định, không khóa cứng khớp.','Chọn cử chỉ có ý nghĩa minh họa đúng nội dung đang trình bày.','Thả lỏng cổ tay và khuỷu tay; tránh giữ nguyên một tư thế quá lâu.','Phối hợp hai tay nhịp nhàng, tránh để hai tay chuyển động rời rạc.'][i]}</li>`).join('')}</ul></div></div><button class="btn" id="bodyTryAgain">Luyện lại động tác</button>`;document.getElementById('bodyTryAgain').onclick=()=>{document.getElementById('bodyReset').click();stepIndex=0;renderStep()};let arr=JSON.parse(localStorage.getItem('ciceroResults')||'[]');arr.unshift({skill:'Luyện ngôn ngữ cơ thể',date:new Date().toLocaleString('vi-VN'),seconds:0,score,notes:labels.map((x,i)=>x+': '+pct[i]+'%').join('; ')});localStorage.setItem('ciceroResults',JSON.stringify(arr))};
+ document.getElementById('bodyComplete').onclick=()=>{if(!poseLatest){document.getElementById('autoBodyStatus').textContent='Chưa nhận diện được cơ thể. Hãy bật camera và đứng trong khung hình.';return}const lm=poseLatest,vis=(i)=>(lm[i]&&(lm[i].visibility??0)>0.45);const handFrame=vis(15)&&vis(16)&&[15,16].every(i=>lm[i].x>0.02&&lm[i].x<0.98&&lm[i].y>0.03&&lm[i].y<0.98);const noFace=vis(0)&&vis(15)&&vis(16)&&Math.hypot(lm[15].x-lm[0].x,lm[15].y-lm[0].y)>0.10&&Math.hypot(lm[16].x-lm[0].x,lm[16].y-lm[0].y)>0.10;const shoulders=vis(11)&&vis(12)&&Math.abs(lm[11].y-lm[12].y)<0.12;const upright=vis(11)&&vis(12)&&vis(23)&&vis(24)&&Math.abs(((lm[11].x+lm[12].x)/2)-((lm[23].x+lm[24].x)/2))<0.18;const symmetry=shoulders?Math.max(0,Math.min(100,Math.round(100-Math.abs(lm[11].y-lm[12].y)*500))):0;const pct=[noFace?100:35,handFrame?100:30,symmetry,upright?90:40,handFrame?80:45,shoulders?80:45,handFrame&&noFace?80:45];const labels=['Tay không che mặt','Tay xuất hiện đúng khung hình','Độ cân xứng hai bên vai','Tư thế đứng thẳng, ổn định','Cử chỉ tay phù hợp nội dung','Động tác tay tự nhiên, không quá cứng','Mức độ phối hợp giữa hai tay'];const score=Math.round(pct.reduce((a,b)=>a+b,0)/pct.length);completed++;const res=document.getElementById('bodyResult');res.classList.remove('hidden');res.innerHTML=`<b>📊 BẢNG ĐÁNH GIÁ NGÔN NGỮ CƠ THỂ: ${score}/100</b><p class="small-note">Các mục dựa trên khung hình camera là ước tính theo vị trí cơ thể; mức phù hợp nội dung, tự nhiên và phối hợp là chỉ số tham khảo, chưa phải phân tích ngữ nghĩa cử chỉ.</p><div class="metric-grid">${labels.map((label,i)=>`<div class="metric"><div class="metric-top"><span>${label}</span><span>${pct[i]}%</span></div><div class="meter"><span style="width:${pct[i]}%"></span></div><p class="small-note">${pct[i]>=80?'Tốt, tiếp tục duy trì.':'Cần điều chỉnh: '+(['Giữ bàn tay cách vùng mặt khi minh họa.','Lùi camera để cả hai bàn tay luôn nằm trong hình.','Thả lỏng vai và giữ hai bên vai ngang hơn.','Giữ thân trên thẳng, trọng tâm ổn định.','Chọn cử chỉ minh họa đúng ý đang nói.','Thả lỏng cổ tay, tránh giữ tay cứng.','Dùng hai tay nhịp nhàng, tránh chuyển động lệch nhau.'][i])}</p></div>`).join('')}</div><div class="feedback-list"><div class="feedback-item"><b>Điểm tổng:</b> ${score}% — trung bình của 7 tiêu chí.</div><div class="feedback-item"><b>Nhận xét lỗi và cách sửa:</b><ul>${labels.map((label,i)=>`<li><b>${label} (${pct[i]}%):</b> ${pct[i]>=80?'Đang thực hiện khá tốt, tiếp tục duy trì.':['Giữ hai bàn tay cách vùng mặt khi minh họa, tránh đưa tay ngang mặt.','Điều chỉnh khoảng cách camera để cả hai bàn tay luôn nằm trọn trong khung hình.','Thả lỏng vai, giữ hai bên vai cân bằng và tránh nghiêng người.','Giữ lưng thẳng tự nhiên, đầu và thân trên ổn định, không khóa cứng khớp.','Chọn cử chỉ có ý nghĩa minh họa đúng nội dung đang trình bày.','Thả lỏng cổ tay và khuỷu tay; tránh giữ nguyên một tư thế quá lâu.','Phối hợp hai tay nhịp nhàng, tránh để hai tay chuyển động rời rạc.'][i]}</li>`).join('')}</ul></div></div><button class="btn" id="bodyTryAgain">Luyện lại động tác</button>`;document.getElementById('bodyTryAgain').onclick=()=>{document.getElementById('bodyReset').click();stepIndex=0;renderStep()};let arr=JSON.parse(localStorage.getItem('ciceroResults')||'[]');arr.unshift({skill:'Luyện ngôn ngữ cơ thể',date:new Date().toLocaleString('vi-VN'),seconds:0,score,notes:labels.map((x,i)=>x+': '+pct[i]+'%').join('; ')});localStorage.setItem('ciceroResults',JSON.stringify(arr));setTimeout(()=>page('Đánh giá'),650)};
 
  
 
@@ -1870,7 +2222,7 @@ function pageOriginal(name){stopTimer();if(questionPhaseTimer){clearInterval(que
 
  
 
-'Đổi quà':`<h1 class="hero">Đổi quà</h1><div class="content-area panel"><h2>🎁 Cửa hàng phần thưởng ảo</h2><div class="badge-count">🏅 Huy hiệu chăm chỉ: <span id="rewardBadges">0</span></div><div id="rewardMsg" class="result" aria-live="polite">Chọn phần thưởng để xem điều kiện đổi.</div><p>Có đủ 20 nhân vật trong bộ sưu tập. 5 nhân vật đầu được mở miễn phí; cả 15 nhân vật còn lại đều có nút đổi quà riêng với mức huy hiệu tăng dần từ 10 đến 80.</p><div class="activity-grid"><div class="mini"><h3>🐰 Thỏ Mây</h3><p>Đã mở khóa miễn phí</p><button class="btn alt" disabled>Đã sở hữu</button></div><div class="mini"><h3>🦊 Cáo Cam</h3><p>Đã mở khóa miễn phí</p><button class="btn alt" disabled>Đã sở hữu</button></div><div class="mini"><h3>🐼 Gấu Trúc</h3><p>Đã mở khóa miễn phí</p><button class="btn alt" disabled>Đã sở hữu</button></div><div class="mini"><h3>🐱 Mèo Mun</h3><p>Đã mở khóa miễn phí</p><button class="btn alt" disabled>Đã sở hữu</button></div><div class="mini"><h3>🐶 Cún Bông</h3><p>Đã mở khóa miễn phí</p><button class="btn alt" disabled>Đã sở hữu</button></div><div class="mini"><h3>🦉 Cú Đêm</h3><p>80 huy hiệu · Mở nhân vật Cú Đêm</p><button class="btn" data-reward="owl">Đổi ngay · 80 🏅</button></div><div class="mini"><h3>🐸 Ếch Xanh</h3><p>100 huy hiệu · Mở nhân vật Ếch Xanh</p><button class="btn" data-reward="char6">Đổi ngay · 100 🏅</button></div><div class="mini"><h3>🦋 Bướm Ngọc</h3><p>120 huy hiệu · Mở nhân vật Bướm Ngọc</p><button class="btn" data-reward="char7">Đổi ngay · 120 🏅</button></div><div class="mini"><h3>🐧 Cánh Cụt</h3><p>140 huy hiệu · Mở nhân vật Cánh Cụt</p><button class="btn" data-reward="char8">Đổi ngay · 140 🏅</button></div><div class="mini"><h3>🦄 Kỳ Lân</h3><p>160 huy hiệu · Mở nhân vật Kỳ Lân</p><button class="btn" data-reward="char9">Đổi ngay · 160 🏅</button></div><div class="mini"><h3>🐻 Gấu Nâu</h3><p>180 huy hiệu · Mở nhân vật Gấu Nâu</p><button class="btn" data-reward="char10">Đổi ngay · 180 🏅</button></div><div class="mini"><h3>🦁 Sư Tử</h3><p>200 huy hiệu · Mở nhân vật Sư Tử</p><button class="btn" data-reward="char11">Đổi ngay · 200 🏅</button></div><div class="mini"><h3>🐯 Hổ Vằn</h3><p>220 huy hiệu · Mở nhân vật Hổ Vằn</p><button class="btn" data-reward="char12">Đổi ngay · 220 🏅</button></div><div class="mini"><h3>🐨 Koala</h3><p>240 huy hiệu · Mở nhân vật Koala</p><button class="btn" data-reward="char13">Đổi ngay · 240 🏅</button></div><div class="mini"><h3>🦝 Gấu Mèo</h3><p>260 huy hiệu · Mở nhân vật Gấu Mèo</p><button class="btn" data-reward="char14">Đổi ngay · 260 🏅</button></div><div class="mini"><h3>🐹 Hamster</h3><p>280 huy hiệu · Mở nhân vật Hamster</p><button class="btn" data-reward="char15">Đổi ngay · 280 🏅</button></div><div class="mini"><h3>🦦 Rái Cá</h3><p>300 huy hiệu · Mở nhân vật Rái Cá</p><button class="btn" data-reward="char16">Đổi ngay · 300 🏅</button></div><div class="mini"><h3>🐬 Cá Heo</h3><p>320 huy hiệu · Mở nhân vật Cá Heo</p><button class="btn" data-reward="char17">Đổi ngay · 320 🏅</button></div><div class="mini"><h3>🦚 Công Xanh</h3><p>340 huy hiệu · Mở nhân vật Công Xanh</p><button class="btn" data-reward="char18">Đổi ngay · 340 🏅</button></div><div class="mini"><h3>🐲 Rồng Mây</h3><p>360 huy hiệu · Mở nhân vật Rồng Mây</p><button class="btn" data-reward="char19">Đổi ngay · 360 🏅</button></div></div><div id="rewardMsg" class="result"></div></div>`,
+'Đổi quà':`<h1 class="hero">Đổi quà</h1><div class="content-area panel"><h2>🎁 Cửa hàng phần thưởng ảo</h2><div class="badge-count">🏅 Huy hiệu chăm chỉ: <span id="rewardBadges">0</span></div><div id="rewardMsg" class="result" aria-live="polite">Chọn phần thưởng để xem điều kiện đổi.</div><p>Có đủ 20 nhân vật trong bộ sưu tập. 5 nhân vật đầu được mở miễn phí; cả 15 nhân vật còn lại đều có nút đổi quà riêng với mức đổi quà từ 15 đến 45 huy hiệu chăm chỉ, tùy từng nhân vật.</p><div class="activity-grid"><div class="mini"><h3>🐰 Thỏ Mây</h3><p>Đã mở khóa miễn phí</p><button class="btn alt" disabled>Đã sở hữu</button></div><div class="mini"><h3>🦊 Cáo Cam</h3><p>Đã mở khóa miễn phí</p><button class="btn alt" disabled>Đã sở hữu</button></div><div class="mini"><h3>🐼 Gấu Trúc</h3><p>Đã mở khóa miễn phí</p><button class="btn alt" disabled>Đã sở hữu</button></div><div class="mini"><h3>🐱 Mèo Mun</h3><p>Đã mở khóa miễn phí</p><button class="btn alt" disabled>Đã sở hữu</button></div><div class="mini"><h3>🐶 Cún Bông</h3><p>Đã mở khóa miễn phí</p><button class="btn alt" disabled>Đã sở hữu</button></div><div class="mini"><h3>🦉 Cú Đêm</h3><p>15 huy hiệu chăm chỉ · Mở nhân vật Cú Đêm</p><button class="btn" data-reward="owl">Đổi ngay · 15 🏅</button></div><div class="mini"><h3>🐸 Ếch Xanh</h3><p>18 huy hiệu chăm chỉ · Mở nhân vật Ếch Xanh</p><button class="btn" data-reward="char6">Đổi ngay · 18 🏅</button></div><div class="mini"><h3>🦋 Bướm Ngọc</h3><p>20 huy hiệu chăm chỉ · Mở nhân vật Bướm Ngọc</p><button class="btn" data-reward="char7">Đổi ngay · 20 🏅</button></div><div class="mini"><h3>🐧 Cánh Cụt</h3><p>22 huy hiệu chăm chỉ · Mở nhân vật Cánh Cụt</p><button class="btn" data-reward="char8">Đổi ngay · 22 🏅</button></div><div class="mini"><h3>🦄 Kỳ Lân</h3><p>24 huy hiệu chăm chỉ · Mở nhân vật Kỳ Lân</p><button class="btn" data-reward="char9">Đổi ngay · 24 🏅</button></div><div class="mini"><h3>🐻 Gấu Nâu</h3><p>26 huy hiệu chăm chỉ · Mở nhân vật Gấu Nâu</p><button class="btn" data-reward="char10">Đổi ngay · 26 🏅</button></div><div class="mini"><h3>🦁 Sư Tử</h3><p>28 huy hiệu chăm chỉ · Mở nhân vật Sư Tử</p><button class="btn" data-reward="char11">Đổi ngay · 28 🏅</button></div><div class="mini"><h3>🐯 Hổ Vằn</h3><p>30 huy hiệu chăm chỉ · Mở nhân vật Hổ Vằn</p><button class="btn" data-reward="char12">Đổi ngay · 30 🏅</button></div><div class="mini"><h3>🐨 Koala</h3><p>32 huy hiệu chăm chỉ · Mở nhân vật Koala</p><button class="btn" data-reward="char13">Đổi ngay · 32 🏅</button></div><div class="mini"><h3>🦝 Gấu Mèo</h3><p>34 huy hiệu chăm chỉ · Mở nhân vật Gấu Mèo</p><button class="btn" data-reward="char14">Đổi ngay · 34 🏅</button></div><div class="mini"><h3>🐹 Hamster</h3><p>36 huy hiệu chăm chỉ · Mở nhân vật Hamster</p><button class="btn" data-reward="char15">Đổi ngay · 36 🏅</button></div><div class="mini"><h3>🦦 Rái Cá</h3><p>38 huy hiệu chăm chỉ · Mở nhân vật Rái Cá</p><button class="btn" data-reward="char16">Đổi ngay · 38 🏅</button></div><div class="mini"><h3>🐬 Cá Heo</h3><p>40 huy hiệu chăm chỉ · Mở nhân vật Cá Heo</p><button class="btn" data-reward="char17">Đổi ngay · 40 🏅</button></div><div class="mini"><h3>🦚 Công Xanh</h3><p>42 huy hiệu chăm chỉ · Mở nhân vật Công Xanh</p><button class="btn" data-reward="char18">Đổi ngay · 42 🏅</button></div><div class="mini"><h3>🐲 Rồng Mây</h3><p>45 huy hiệu chăm chỉ · Mở nhân vật Rồng Mây</p><button class="btn" data-reward="char19">Đổi ngay · 45 🏅</button></div></div><div id="rewardMsg" class="result"></div></div>`,
 
  
 
@@ -1930,7 +2282,7 @@ function pageOriginal(name){stopTimer();if(questionPhaseTimer){clearInterval(que
 
  
 
-  form.onsubmit=async event=>{event.preventDefault();const status=document.getElementById('feedbackStatus');const name=document.getElementById('feedbackName').value.trim()||'Ẩn danh';const type=document.getElementById('feedbackType').value;const message=document.getElementById('feedbackMessage').value.trim();const rating=Number(document.getElementById('feedbackRating').value);if(!message){status.textContent='Nhập nội dung góp ý trước nha.';document.getElementById('feedbackMessage').focus();return}const submitBtn=form.querySelector('button[type="submit"]');submitBtn.disabled=true;status.textContent='Đang lưu góp ý...';try{const {error}=await ciceroSupabase.from('cicero_feedback').insert({display_name:name,feedback_type:type,rating,message});if(error)throw error;status.textContent='Đã đăng góp ý công khai. Cảm ơn m!';form.reset();chosenRating=5;paintStars();await loadFeedback()}catch(e){status.textContent='Chưa lưu được góp ý: '+(e.message||'Lỗi kết nối')}finally{submitBtn.disabled=false}};
+  form.onsubmit=async event=>{event.preventDefault();const status=document.getElementById('feedbackStatus');const name=document.getElementById('feedbackName').value.trim()||'Ẩn danh';const type=document.getElementById('feedbackType').value;const message=document.getElementById('feedbackMessage').value.trim();const rating=Number(document.getElementById('feedbackRating').value);if(!message){status.textContent='Vui lòng nhập nội dung góp ý trước khi gửi.';document.getElementById('feedbackMessage').focus();return}const submitBtn=form.querySelector('button[type="submit"]');submitBtn.disabled=true;status.textContent='Đang lưu góp ý...';try{const {error}=await ciceroSupabase.from('cicero_feedback').insert({display_name:name,feedback_type:type,rating,message});if(error)throw error;status.textContent='Góp ý của bạn đã được gửi. Cicero chân thành cảm ơn bạn!';form.reset();chosenRating=5;paintStars();await loadFeedback()}catch(e){status.textContent='Chưa lưu được góp ý: '+(e.message||'Lỗi kết nối')}finally{submitBtn.disabled=false}};
 
  
 
@@ -1954,7 +2306,7 @@ function pageOriginal(name){stopTimer();if(questionPhaseTimer){clearInterval(que
 
  
 
-  const paintAi=()=>{const arr=aiHistory();aiWindow.innerHTML=arr.map(m=>`<div style="display:flex;justify-content:${m.role==='user'?'flex-end':'flex-start'};margin:9px 0"><div style="max-width:88%;padding:10px 13px;border-radius:14px;background:${m.role==='user'?'#d9fff0':'#fff2bd'};white-space:pre-wrap">${escapeHtml(m.text)}</div></div>`).join('')||'<p style="text-align:center">Xin chào! Hãy nhập câu hỏi bất kỳ nhé 🌷</p>';aiWindow.scrollTop=aiWindow.scrollHeight};
+  const paintAi=()=>{const arr=aiHistory();aiWindow.innerHTML=arr.map(m=>`<div style="display:flex;justify-content:${m.role==='user'?'flex-end':'flex-start'};margin:9px 0"><div style="max-width:88%;padding:10px 13px;border-radius:14px;background:${m.role==='user'?'#d9fff0':'#fff2bd'};white-space:pre-wrap">${escapeHtml(m.text)}</div></div>`).join('')||'<p style="text-align:center">Xin chào bạn! Mình là Cicero. Mình có thể hỗ trợ bạn về kỹ năng thuyết trình và học tập. 🌷</p>';aiWindow.scrollTop=aiWindow.scrollHeight};
 
  
 
@@ -1962,7 +2314,7 @@ function pageOriginal(name){stopTimer();if(questionPhaseTimer){clearInterval(que
 
  
 
-  const ask=async()=>{const q=aiInput.value.trim();if(!q)return;const arr=aiHistory();arr.push({role:'user',text:q});localStorage.setItem(aiKey,JSON.stringify(arr));aiInput.value='';paintAi();aiStatus.textContent='Cicero đang suy nghĩ...';document.getElementById('askCicero').disabled=true;try{const session=(await ciceroSupabase.auth.getSession()).data.session;const response=await fetch(CICERO_SUPABASE_URL+'/functions/v1/cicero-ai',{method:'POST',headers:{'Content-Type':'application/json','apikey':CICERO_SUPABASE_KEY,'Authorization':'Bearer '+(session?.access_token||CICERO_SUPABASE_KEY)},body:JSON.stringify({message:arr.slice(-12).map(m=>(m.role==="user"?"Người dùng":"Cicero")+": "+m.text).join("\n\n")})});const data=await response.json();if(!response.ok)throw new Error(data.error||data.message||'Chưa kết nối được AI');const answer=data.reply||data.answer||data.text;if(!answer)throw new Error('AI chưa trả về nội dung.');arr.push({role:'assistant',text:answer});localStorage.setItem(aiKey,JSON.stringify(arr));aiStatus.textContent='Đã trả lời · Lịch sử lưu trên thiết bị.';paintAi()}catch(e){aiStatus.textContent='Chưa kết nối được AI: '+e.message+' (cần triển khai Edge Function cicero-ai).'}finally{document.getElementById('askCicero').disabled=false}};
+  const ask=async()=>{const q=aiInput.value.trim();if(!q)return;const arr=aiHistory();arr.push({role:'user',text:q});localStorage.setItem(aiKey,JSON.stringify(arr));aiInput.value='';paintAi();aiStatus.textContent='Cicero đang suy nghĩ...';document.getElementById('askCicero').disabled=true;try{const session=(await ciceroSupabase.auth.getSession()).data.session;const response=await fetch(CICERO_SUPABASE_URL+'/functions/v1/cicero-ai',{method:'POST',headers:{'Content-Type':'application/json','apikey':CICERO_SUPABASE_KEY,'Authorization':'Bearer '+(session?.access_token||CICERO_SUPABASE_KEY)},body:JSON.stringify({message:'Hướng dẫn phong cách: Bạn là trợ lý Cicero lịch sự, thân thiện và tôn trọng. Luôn xưng mình và gọi người dùng là bạn; không dùng cách xưng hô suồng sã như tao/mày, t/m. Trả lời rõ ràng, nhẹ nhàng bằng tiếng Việt.\n\n'+arr.slice(-12).map(m=>(m.role==="user"?"Người dùng":"Cicero")+": "+m.text).join("\n\n")})});const data=await response.json();if(!response.ok)throw new Error(data.error||data.message||'Chưa kết nối được AI');const answer=data.reply||data.answer||data.text;if(!answer)throw new Error('AI chưa trả về nội dung.');arr.push({role:'assistant',text:answer});localStorage.setItem(aiKey,JSON.stringify(arr));aiStatus.textContent='Đã trả lời · Lịch sử lưu trên thiết bị.';paintAi()}catch(e){const low=q.toLowerCase();let answer='Mình có thể hỗ trợ bạn luyện thuyết trình. Bạn có thể hỏi về cách mở đầu, triển khai ý, kết luận, giọng nói, ngôn ngữ cơ thể hoặc xử lý câu hỏi.';if(/mở đầu|bắt đầu|intro/.test(low))answer='Bạn có thể mở đầu bằng cách: (1) Chào người nghe; (2) Đặt một câu hỏi hoặc nêu tình huống gần gũi; (3) Giới thiệu chủ đề; (4) Nêu 2–3 ý chính sẽ trình bày. Phần mở đầu nên kéo dài khoảng 20–30 giây.';else if(/kết luận|kết thúc/.test(low))answer='Phần kết luận nên gồm: nhắc lại thông điệp chính, tóm tắt 2–3 ý quan trọng, đưa ra lời kêu gọi hoặc hành động cụ thể và cảm ơn người nghe.';else if(/run|lo|hồi hộp|sợ/.test(low))answer='Khi cảm thấy hồi hộp, bạn hãy thử hít vào 4 giây và thở ra 6 giây trong 3 lần; chuẩn bị trước câu mở đầu; nhìn lần lượt 3 vị trí trong phòng; và nói chậm hơn bình thường một chút.';else if(/giọng|nói/.test(low))answer='Để cải thiện giọng nói, bạn nên phát âm rõ âm cuối, nói theo từng cụm ý, thay đổi cao độ ở từ khóa, ngắt nghỉ sau ý quan trọng và giữ âm lượng ổn định.';else if(/slide|trình chiếu/.test(low))answer='Mỗi slide nên tập trung vào một thông điệp chính, có tiêu đề rõ ràng, ít chữ và hình ảnh kèm chú thích. Bạn không nên đọc nguyên văn slide; hãy diễn giải bằng lời và chuyển slide sau khi hoàn tất ý chính.';else if(/dàn ý|outline/.test(low))answer='Bạn có thể xây dựng dàn ý như sau: Mở đầu (10%) – nêu vấn đề và mục tiêu; Nội dung (75%) – trình bày 2 đến 3 luận điểm, mỗi luận điểm có lý do và ví dụ; Kết luận (15%) – tóm tắt và nhấn mạnh thông điệp cuối.';arr.push({role:'assistant',text:answer});localStorage.setItem(aiKey,JSON.stringify(arr));aiStatus.textContent='Mình đã gửi gợi ý để bạn tham khảo.';paintAi()}finally{document.getElementById('askCicero').disabled=false}};
 
  
 
@@ -2078,23 +2430,23 @@ function pageOriginal(name){stopTimer();if(questionPhaseTimer){clearInterval(que
 
  
 
-  owl:{cost:10,label:'Cú Đêm'},char6:{cost:15,label:'Ếch Xanh'},char7:{cost:20,label:'Bướm Ngọc'},
+  owl:{cost:15,label:'Cú Đêm'},char6:{cost:18,label:'Ếch Xanh'},char7:{cost:20,label:'Bướm Ngọc'},
 
  
 
-  char8:{cost:25,label:'Cánh Cụt'},char9:{cost:30,label:'Kỳ Lân'},char10:{cost:35,label:'Gấu Nâu'},
+  char8:{cost:22,label:'Cánh Cụt'},char9:{cost:24,label:'Kỳ Lân'},char10:{cost:26,label:'Gấu Nâu'},
 
  
 
-  char11:{cost:40,label:'Sư Tử'},char12:{cost:45,label:'Hổ Vằn'},char13:{cost:50,label:'Koala'},
+  char11:{cost:28,label:'Sư Tử'},char12:{cost:30,label:'Hổ Vằn'},char13:{cost:32,label:'Koala'},
 
  
 
-  char14:{cost:55,label:'Gấu Mèo'},char15:{cost:60,label:'Hamster'},char16:{cost:65,label:'Rái Cá'},
+  char14:{cost:34,label:'Gấu Mèo'},char15:{cost:36,label:'Hamster'},char16:{cost:38,label:'Rái Cá'},
 
  
 
-  char17:{cost:70,label:'Cá Heo'},char18:{cost:75,label:'Công Xanh'},char19:{cost:80,label:'Rồng Mây'}
+  char17:{cost:40,label:'Cá Heo'},char18:{cost:42,label:'Công Xanh'},char19:{cost:45,label:'Rồng Mây'}
 
  
 
@@ -2232,7 +2584,7 @@ function ciceroGetBest(name){let rs=[];try{rs=JSON.parse(localStorage.getItem('c
 
 function page(name){
 
- if(name==='Thuyết trình tiếp cận' && window.ciceroOpenAccessiblePresentation){window.ciceroOpenAccessiblePresentation();return;}
+ if((name==='Thuyết trình tiếp cận'||name==='Luyện tập tiếp cận') && window.ciceroOpenAccessiblePresentation){window.ciceroOpenAccessiblePresentation();return;}
 
  
 
@@ -2346,7 +2698,7 @@ if(mobileMenuAside&&mobileMenuToggle){
 
    tile.style.cssText='background:#fff;border:2px solid #d6f1e9;border-radius:22px;padding:16px;min-height:145px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#087f83;font-weight:900;cursor:pointer;box-shadow:0 8px 20px #428d8b20';
 
-   tile.innerHTML='<span style="font-size:42px">🦯</span><span class="skill-label">Thuyết trình tiếp cận</span><small style="font-weight:600;color:#66898a">Hỗ trợ người khiếm thị</small>';
+   tile.innerHTML='<span style="font-size:42px">🦯</span><span class="skill-label">Thuyết trình cho người khiếm thị</span><small style="font-weight:600;color:#66898a">Đọc nội dung, hỗ trợ bằng giọng nói và bàn phím</small>';
 
    tile.onclick=()=>renderAccessiblePresentation();
 
@@ -2424,7 +2776,7 @@ if(mobileMenuAside&&mobileMenuToggle){
 
     <div class="cicero-camera-tools"><label for="ciceroZoom">Zoom camera</label><select id="ciceroZoom"><option value="0.4">0.4×</option><option value="0.5">0.5×</option><option value="0.7">0.7×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option><option value="2.5">2.5×</option><option value="3">3×</option></select><button class="cicero-upgrade-btn alt" id="ciceroCamFull">⛶ Phóng camera</button><button class="cicero-upgrade-btn alt" id="ciceroPageFull">⛶ Toàn màn hình luyện tập</button></div>
 
-    <h3>🖼️ Slide / hình ảnh trình chiếu</h3><input type="file" id="ciceroSlideFile" accept="image/*,.pdf"><div class="cicero-slide" id="ciceroSlidePreview">Tải ảnh slide lên để xem trước trong buổi luyện tập.</div>
+    <h3>🖼️ Tệp trình chiếu</h3><div class="cicero-file-picker"><label class="cicero-upgrade-btn" for="ciceroSlideFile">📄 Chọn tệp</label><input type="file" id="ciceroSlideFile" accept="image/*,.pdf,.ppt,.pptx" multiple><label class="cicero-upgrade-btn alt" for="ciceroSlideFolder">📁 Chọn thư mục</label><input type="file" id="ciceroSlideFolder" webkitdirectory directory multiple><p class="small-note">Chọn nhiều ảnh, PDF, PowerPoint hoặc chọn cả thư mục chứa slide.</p><div id="ciceroSelectedFiles" class="small-note">Chưa chọn tệp nào.</div></div><div class="cicero-slide" id="ciceroSlidePreview">Tệp trình chiếu đã chọn sẽ hiển thị tại đây.</div>
 
     <h3 style="margin-top:16px">📝 Nội dung lời nói được nhận diện</h3><div id="ciceroLiveTranscript" class="cicero-transcript" aria-live="polite">Phần lời nói sẽ xuất hiện ở đây khi trình duyệt hỗ trợ nhận diện tiếng Việt.</div>
 
@@ -2440,7 +2792,7 @@ if(mobileMenuAside&&mobileMenuToggle){
 
    $('ciceroPageFull').onclick=()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.()};
 
-   $('ciceroSlideFile').onchange=()=>{const f=$('ciceroSlideFile').files?.[0];if(!f)return;const box=$('ciceroSlidePreview');if(f.type.startsWith('image/')){const url=URL.createObjectURL(f);box.innerHTML='';const img=document.createElement('img');img.src=url;img.alt='Ảnh slide trình chiếu';box.appendChild(img)}else if(f.type==='application/pdf'){box.textContent='Đã chọn PDF: '+f.name+'. Có thể mở file này trong tab mới để trình chiếu.';window.open(URL.createObjectURL(f),'_blank','noopener')}else box.textContent='Định dạng chưa hỗ trợ.'};
+   const renderSlideFiles=(files)=>{const list=[...files].filter(f=>/\.(png|jpe?g|gif|webp|pdf|pptx?)$/i.test(f.name));const label=$('ciceroSelectedFiles'),box=$('ciceroSlidePreview');if(!list.length){label.textContent='Chưa chọn tệp phù hợp.';return}label.innerHTML='<b>Đã chọn '+list.length+' tệp:</b><br>'+list.map(f=>'• '+f.webkitRelativePath||f.name).map(x=>String(x)).join('<br>');box.innerHTML='';list.slice(0,12).forEach(f=>{if(f.type.startsWith('image/')){const url=URL.createObjectURL(f),img=document.createElement('img');img.src=url;img.alt='Slide '+f.name;img.style.cssText='max-width:100%;max-height:420px;display:block;margin:10px auto;border-radius:12px';box.appendChild(img)}else{const row=document.createElement('div');row.className='mini';row.textContent=(f.type==='application/pdf'?'📕 PDF: ':'📊 PowerPoint: ')+f.name+' · '+(f.size/1024/1024).toFixed(2)+' MB';box.appendChild(row)}});if(list.length>12){const more=document.createElement('p');more.textContent='Còn '+(list.length-12)+' tệp trong danh sách.';box.appendChild(more)}};$('ciceroSlideFile').onchange=e=>renderSlideFiles(e.target.files);$('ciceroSlideFolder').onchange=e=>renderSlideFiles(e.target.files);
 
    $('ciceroReadTranscript').onclick=()=>{const text=$('ciceroLiveTranscript').textContent.trim();if(!text)return; speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='vi-VN';speechSynthesis.speak(u)};
 
@@ -2460,7 +2812,9 @@ if(mobileMenuAside&&mobileMenuToggle){
 
    if(typeof endPractice==='function')endPractice(false);
 
-   view.innerHTML=`<h1 class="hero">🦯 Thuyết trình tiếp cận</h1>
+   view.classList.add('cicero-accessible-page');
+
+   view.innerHTML=`<h1 class="hero" tabindex="-1">🦯 Thuyết trình tiếp cận cho người khiếm thị</h1>
 
    <section class="cicero-upgrade-card">
 
@@ -2474,7 +2828,7 @@ if(mobileMenuAside&&mobileMenuToggle){
 
    <section class="cicero-upgrade-card"><h2>🗂️ Chuẩn bị bài thuyết trình</h2><div class="field"><label for="a11yTitle">Tên bài thuyết trình</label><input id="a11yTitle" class="field" placeholder="Ví dụ: Ước mơ của em"></div><div class="field"><label for="a11yScript">Nội dung / lời nhắc / kịch bản</label><textarea id="a11yScript" class="field" rows="9" placeholder="Dán nội dung bài nói hoặc các ý chính tại đây..."></textarea></div><div class="cicero-camera-tools"><button class="cicero-upgrade-btn" id="a11yReadScript">🔊 Đọc bài nói</button><button class="cicero-upgrade-btn alt" id="a11yStopScript">Dừng đọc</button><button class="cicero-upgrade-btn alt" id="a11ySaveScript">Lưu nội dung</button></div><div class="cicero-access-workspace"><div><h3>📝 Bản chép lời trực tiếp</h3><div id="a11yTranscript" class="cicero-transcript" aria-live="polite">Chưa bắt đầu nhận diện giọng nói.</div><div class="cicero-camera-tools"><button class="cicero-upgrade-btn" id="a11yStartSpeech">🎙️ Bắt đầu chuyển giọng nói thành chữ</button><button class="cicero-upgrade-btn alt" id="a11yStopSpeechRec">Dừng nhận diện</button></div></div><div><h3>📣 Teleprompter / nội dung đang đọc</h3><div id="a11yTeleprompter" class="teleprompter" tabindex="0">Nội dung bài nói sẽ hiển thị ở đây.</div></div></div></section>
 
-   <section class="cicero-upgrade-card"><h2>🎥 Camera và slide</h2><div class="cicero-camera-tools"><button class="cicero-upgrade-btn" id="a11yCamera">Bật camera</button><button class="cicero-upgrade-btn alt" id="a11yCameraStop">Tắt camera</button><label>Zoom <select id="a11yZoom"><option value=".4">0.4×</option><option value=".5">0.5×</option><option value=".7">0.7×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label><button class="cicero-upgrade-btn alt" id="a11yCamFull">⛶ Toàn màn hình camera</button></div><div class="camera-frame" id="a11yCameraFrame" style="position:relative;width:100%;height:clamp(360px,58vh,680px);min-height:360px;background:#153c40;border-radius:18px;overflow:hidden;display:grid;place-items:center;color:white"><span id="a11yCamPlaceholder">Camera đang tắt</span><video id="a11yCamVideo" autoplay muted playsinline style="display:none;width:100%;max-height:460px;object-fit:contain"></video></div><div class="field"><label for="a11ySlide">Tải ảnh slide</label><input id="a11ySlide" type="file" accept="image/*"></div><div class="cicero-slide" id="a11ySlidePreview">Chưa có slide</div></section>
+   <section class="cicero-upgrade-card"><h2>🎥 Camera và slide</h2><div class="cicero-camera-tools"><button class="cicero-upgrade-btn" id="a11yCamera">Bật camera</button><button class="cicero-upgrade-btn alt" id="a11yCameraStop">Tắt camera</button><label>Zoom <select id="a11yZoom"><option value=".4">0.4×</option><option value=".5">0.5×</option><option value=".7">0.7×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label><button class="cicero-upgrade-btn alt" id="a11yCamFull">⛶ Toàn màn hình camera</button></div><div class="camera-frame" id="a11yCameraFrame" style="position:relative;width:100%;height:clamp(360px,58vh,680px);min-height:360px;background:#153c40;border-radius:18px;overflow:hidden;display:grid;place-items:center;color:white"><span id="a11yCamPlaceholder">Camera đang tắt</span><video id="a11yCamVideo" autoplay muted playsinline style="display:none;width:100%;max-height:460px;object-fit:contain"></video></div><div class="field"><label for="a11ySlide">Tải ảnh slide</label><input id="a11ySlide" type="file" accept="image/*"></div><div class="field"><label for="a11ySlideDescription">Mô tả slide bằng chữ (để nghe bằng giọng nói)</label><textarea id="a11ySlideDescription" class="field" rows="2" placeholder="Ví dụ: Slide 1 – Tiêu đề: Bảo vệ môi trường; bên dưới là ba ý chính..."></textarea><button class="cicero-upgrade-btn alt" id="a11yReadSlide">🔊 Đọc mô tả slide</button></div><div class="cicero-slide" id="a11ySlidePreview" aria-live="polite">Chưa có slide</div></section>
 
    <section class="cicero-upgrade-card"><h2>⏱️ Thời lượng buổi tập</h2><div class="cicero-camera-tools"><label for="a11yMinutes">Số phút</label><input id="a11yMinutes" type="number" min="1" max="60" value="3" style="width:90px"><strong id="a11yTimer" style="font-size:25px;color:#087f83">03:00</strong><button class="cicero-upgrade-btn" id="a11yStartTimer">Bắt đầu</button><button class="cicero-upgrade-btn alt" id="a11yFinish">Kết thúc và lưu</button></div><p id="a11yStatus" aria-live="polite">Khi hết giờ, buổi luyện tự dừng và lưu thời lượng.</p></section>`;
 
@@ -2494,6 +2848,8 @@ if(mobileMenuAside&&mobileMenuToggle){
 
    $('a11yStopScript').onclick=()=>speechSynthesis.cancel();
 
+   $('a11yReadSlide').onclick=()=>{const t=$('a11ySlideDescription').value.trim();if(t)speak(t);else speak('Bạn chưa nhập mô tả slide. Hãy nhập mô tả bằng chữ để nghe nội dung hình ảnh.')};
+
    $('a11ySaveScript').onclick=()=>{localStorage.setItem('ciceroAccessibleScript',JSON.stringify({title:$('a11yTitle').value,script:$('a11yScript').value}));$('a11yStatus').textContent='Đã lưu nội dung trên thiết bị.'};
 
    try{const saved=JSON.parse(localStorage.getItem('ciceroAccessibleScript')||'{}');$('a11yTitle').value=saved.title||'';$('a11yScript').value=saved.script||''}catch(e){}
@@ -2508,7 +2864,7 @@ if(mobileMenuAside&&mobileMenuToggle){
 
    $('a11yCameraStop').onclick=()=>{a11yStream?.getTracks().forEach(t=>t.stop());a11yStream=null;$('a11yCamVideo').srcObject=null;$('a11yCamVideo').style.display='none';$('a11yCamPlaceholder').style.display='block'};
 
-   $('a11yZoom').onchange=()=>$('a11yCamVideo').style.transform=`scale(${$('a11yZoom').value})`;
+   $('a11yZoom').onchange=()=>{const z=Number($('a11yZoom').value);$('a11yCamVideo').style.transform=`scale(${z>1?z:1})`;$('a11yStatus').textContent=z<1?'Khung camera giữ nguyên kích thước; camera không thể tạo góc rộng hơn ống kính thật bằng zoom phần mềm.':'Đã đổi mức phóng camera '+z+' lần.'};
 
    $('a11yCamFull').onclick=()=>{const f=$('a11yCameraFrame');if(!document.fullscreenElement)f.requestFullscreen?.();else document.exitFullscreen?.()};
 
@@ -2542,7 +2898,7 @@ if(mobileMenuAside&&mobileMenuToggle){
 
    if(typeof oldPage==='function')oldPage(name);
 
-   setTimeout(()=>{if(name==='Luyện tập')addHomeAccessTile();if(name==='Đánh giá')analytics();if(name==='Luyện tập')enhancePractice()},80);
+   setTimeout(()=>{if(name==='Đánh giá')analytics();if(name==='Luyện tập')enhancePractice()},80);
 
  };
 
@@ -2556,9 +2912,531 @@ if(mobileMenuAside&&mobileMenuToggle){
 
  
 
-document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-page]').forEach(x=>x.classList.remove('active'));b.classList.add('active');page(b.dataset.page)}));home();
+document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-page]').forEach(x=>x.classList.remove('active'));b.classList.add('active');page(b.dataset.page)}));page('Luyện tập');
 
  
 
-</script></body></html>
+</script>
+
+<style id="cicero-team-nav-update">
+
+/* Compact grouped navigation */
+
+.cicero-sidebar .logo{font-size:24px!important;letter-spacing:-.5px!important}
+
+.cicero-sidebar .logo::first-letter{font-size:inherit}
+
+.nav-group{margin:8px 8px 12px!important;padding:8px!important;border-radius:18px!important;background:rgba(255,255,255,.42)!important}
+
+.nav-group-title{display:flex!important;align-items:center;justify-content:space-between;gap:8px;padding:10px 11px!important;border-radius:13px!important;font-weight:900!important;cursor:pointer!important;user-select:none!important}
+
+.nav-group-title::after{content:"⌄";font-size:16px;transition:transform .18s ease}
+
+.nav-group.is-collapsed .nav-group-title::after{transform:rotate(-90deg)}
+
+.nav-group.is-collapsed .sidebtn{display:none!important}
+
+.nav-group .sidebtn{width:100%;text-align:left;margin:3px 0!important}
+
+.topbar-brand{font-weight:900!important}
+
+.topbar-brand::first-letter{color:#0b8990}
+
+/* Large landscape camera area for two or more presenters */
+
+.practice-layout{grid-template-columns:minmax(0,1fr) minmax(260px,.34fr)!important;gap:14px!important}
+
+.practice-layout>.studio-card:first-child{min-width:0!important}
+
+.practice-layout .camera-frame{width:100%!important;height:clamp(500px,68vh,780px)!important;min-height:500px!important;aspect-ratio:16/9!important;background:#163d42!important;border-radius:22px!important}
+
+.practice-layout .camera-frame video{width:100%!important;height:100%!important;max-height:none!important;object-fit:contain!important}
+
+#bodyCam,#cam{object-fit:contain!important}
+
+@media(max-width:850px){
+
+ .practice-layout{grid-template-columns:1fr!important}
+
+ .practice-layout .camera-frame{height:58vh!important;min-height:340px!important}
+
+}
+
+.team-compare{margin-top:18px;padding:20px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid #d9f0ed;box-shadow:0 8px 22px #428d8b16}
+
+.team-compare h2{margin:0 0 8px;color:#087d8b}
+
+.team-form-grid{display:grid;grid-template-columns:repeat(5,minmax(90px,1fr));gap:8px;align-items:end}
+
+.team-form-grid label{font-size:12px;font-weight:800}
+
+.team-form-grid input{width:100%;min-width:0;padding:9px;border:1px solid #d8e9e8;border-radius:10px;background:#fbffff;color:#425c7c}
+
+.team-person-row{display:grid;grid-template-columns:1.2fr repeat(4,minmax(60px,.6fr)) .6fr;gap:8px;align-items:center;padding:10px;border-bottom:1px solid #e6f1f0}
+
+.team-bar{height:9px;border-radius:99px;background:#e5f3f0;overflow:hidden;margin-top:5px}
+
+.team-bar>span{display:block;height:100%;background:linear-gradient(90deg,#39c7ba,#7181dc);border-radius:99px}
+
+@media(max-width:700px){.team-form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.team-person-row{grid-template-columns:1fr 1fr 1fr}.team-person-row>*:first-child{grid-column:1/-1}}
+
+</style>
+
+<script id="cicero-team-nav-js">
+
+(function(){
+
+ const side=document.querySelector('.cicero-sidebar');
+
+ if(side){
+
+   const logo=side.querySelector('.logo');
+
+   if(logo){logo.innerHTML='Cicero&amp;Co';logo.setAttribute('aria-label','Cicero&Co');}
+
+   side.querySelectorAll('.nav-group').forEach((group,index)=>{
+
+     const title=group.querySelector('.nav-group-title'); if(!title)return;
+
+     group.classList.add('is-collapsed');
+
+     title.setAttribute('role','button');title.setAttribute('tabindex','0');title.setAttribute('aria-expanded','false');
+
+     const toggle=()=>{const closed=group.classList.toggle('is-collapsed');title.setAttribute('aria-expanded',String(!closed));};
+
+     title.addEventListener('click',toggle);
+
+     title.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}});
+
+   });
+
+   // Keep only the main group labels visible; opening a group reveals its sub-pages.
+
+ }
+
+ // Upgrade camera capture to request a landscape frame suitable for group presentations.
+
+ const nativeGetUserMedia=navigator.mediaDevices?.getUserMedia?.bind(navigator.mediaDevices);
+
+ if(nativeGetUserMedia&&!window.__ciceroGroupCameraWrapped){
+
+   window.__ciceroGroupCameraWrapped=true;
+
+   navigator.mediaDevices.getUserMedia=function(constraints){
+
+     if(constraints&&constraints.video===true) constraints={...constraints,video:{width:{ideal:1920},height:{ideal:1080},aspectRatio:{ideal:16/9},facingMode:'user'}};
+
+     else if(constraints&&constraints.video&&typeof constraints.video==='object'){
+
+       constraints={...constraints,video:{width:{ideal:1920},height:{ideal:1080},aspectRatio:{ideal:16/9},...constraints.video}};
+
+     }
+
+     return nativeGetUserMedia(constraints);
+
+   };
+
+ }
+
+ const safeRead=()=>{try{return JSON.parse(localStorage.getItem('ciceroTeamCompare')||'[]')}catch(e){return []}};
+
+ const safeWrite=x=>localStorage.setItem('ciceroTeamCompare',JSON.stringify(x));
+
+ function addTeamComparison(){
+
+   const view=document.getElementById('view'); if(!view||view.querySelector('#teamComparePanel'))return;
+
+   const panel=document.createElement('section');panel.id='teamComparePanel';panel.className='team-compare';
+
+   panel.innerHTML=`
+
+    <h2>👥 Đánh giá và so sánh nhóm thuyết trình</h2>
+
+    <p class="small-note">Thêm từng thành viên và nhập điểm theo cùng một thang 0–10 để so sánh công bằng. Đây là bảng đánh giá có người hướng dẫn nhập điểm, không tự nhận diện/chấm điểm từng người bằng AI.</p>
+
+    <div class="team-form-grid">
+
+      <label>Tên thành viên<input id="teamName" placeholder="Tên người thuyết trình"></label>
+
+      <label>Diễn đạt<input id="teamClarity" type="number" min="0" max="10" step=".5" value="7"></label>
+
+      <label>Giọng nói<input id="teamVoice" type="number" min="0" max="10" step=".5" value="7"></label>
+
+      <label>Ngôn ngữ cơ thể<input id="teamBody" type="number" min="0" max="10" step=".5" value="7"></label>
+
+      <label>Tương tác<input id="teamEngage" type="number" min="0" max="10" step=".5" value="7"></label>
+
+    </div>
+
+    <div style="display:flex;gap:9px;flex-wrap:wrap;margin:12px 0">
+
+      <button class="btn" id="teamAdd">＋ Thêm thành viên</button>
+
+      <button class="btn alt" id="teamClear">Xóa bảng so sánh</button>
+
+    </div>
+
+    <div id="teamCompareRows"></div>
+
+    <div id="teamCompareBest" class="result" style="margin-top:10px">Chưa có dữ liệu so sánh.</div>`;
+
+   view.appendChild(panel);
+
+   const draw=()=>{
+
+     const rows=safeRead();const host=panel.querySelector('#teamCompareRows');
+
+     if(!rows.length){host.innerHTML='<p class="small-note">Chưa có thành viên. Thêm ít nhất hai người để bắt đầu so sánh.</p>';panel.querySelector('#teamCompareBest').textContent='Chưa có dữ liệu so sánh.';return;}
+
+     host.innerHTML='<div class="team-person-row" style="font-weight:900;color:#087d8b"><span>Thành viên</span><span>Diễn đạt</span><span>Giọng nói</span><span>Cơ thể</span><span>Tương tác</span><span>TB</span></div>'+rows.map((r,i)=>{const avg=(r.clarity+r.voice+r.body+r.engage)/4;return `<div class="team-person-row"><b>${String(i+1).padStart(2,'0')}. ${r.name.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}<div class="team-bar"><span style="width:${avg*10}%"></span></div></b><span>${r.clarity}/10</span><span>${r.voice}/10</span><span>${r.body}/10</span><span>${r.engage}/10</span><strong>${avg.toFixed(1)}</strong></div>`}).join('');
+
+     const ranked=[...rows].sort((a,b)=>(b.clarity+b.voice+b.body+b.engage)-(a.clarity+a.voice+a.body+a.engage));
+
+     panel.querySelector('#teamCompareBest').textContent=rows.length<2?'Đã lưu thành viên. Thêm người thứ hai để so sánh.':`Điểm trung bình cao nhất: ${ranked[0].name} (${((ranked[0].clarity+ranked[0].voice+ranked[0].body+ranked[0].engage)/4).toFixed(1)}/10). Hãy xem từng tiêu chí để nhận biết điểm mạnh và nội dung cần luyện thêm.`;
+
+   };
+
+   panel.querySelector('#teamAdd').onclick=()=>{
+
+     const val=id=>Number(panel.querySelector('#'+id).value);
+
+     const name=panel.querySelector('#teamName').value.trim();
+
+     const scores=['teamClarity','teamVoice','teamBody','teamEngage'].map(val);
+
+     if(!name){alert('Nhập tên thành viên trước nhé.');return}
+
+     if(scores.some(x=>!Number.isFinite(x)||x<0||x>10)){alert('Điểm từng tiêu chí phải từ 0 đến 10.');return}
+
+     const rows=safeRead();rows.push({name,clarity:scores[0],voice:scores[1],body:scores[2],engage:scores[3],createdAt:Date.now()});safeWrite(rows);panel.querySelector('#teamName').value='';draw();
+
+   };
+
+   panel.querySelector('#teamClear').onclick=()=>{if(confirm('Xóa toàn bộ bảng so sánh thành viên?')){safeWrite([]);draw()}};
+
+   draw();
+
+ }
+
+ const originalPage=window.page;
+
+ if(typeof originalPage==='function'){
+
+   window.page=function(name){
+
+     originalPage(name);
+
+     if(name==='Đánh giá')setTimeout(addTeamComparison,120);
+
+   };
+
+ }
+
+ // If page dispatcher is lexically scoped, bind through the existing nav buttons too.
+
+ document.querySelectorAll('[data-page="Đánh giá"]').forEach(b=>b.addEventListener('click',()=>setTimeout(addTeamComparison,180)));
+
+})();
+
+</script>
+
+ 
+
+ 
+
+<style id="cicero-final-structure-fix">
+
+/* Global accessibility controls and shared camera tools */
+
+.cicero-global-access{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin:8px 0;padding:8px 12px;border-radius:15px;background:rgba(255,255,255,.72);border:1px solid #d5eee2}
+
+.cicero-global-access button,.cicero-camera-global button{border:0;border-radius:11px;padding:8px 11px;background:#e4f8ef;color:#287b69;font-weight:800;cursor:pointer}
+
+.cicero-global-access button[aria-pressed="true"]{background:#287b69;color:white}
+
+.cicero-camera-global{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:9px 0}
+
+.cicero-camera-global label{font-size:13px;font-weight:800;color:#287b69}
+
+.cicero-camera-global select{border:1px solid #cce8dd;border-radius:10px;padding:8px;background:#fff}
+
+.cicero-person-layer{position:absolute;inset:0;pointer-events:none;z-index:5}
+
+.cicero-person-box{position:absolute;border:3px solid #27c6a5;border-radius:12px;box-shadow:0 0 0 9999px transparent}
+
+.cicero-person-box b{position:absolute;left:-2px;top:-27px;background:#087f83;color:white;border-radius:8px;padding:3px 8px;font-size:13px;white-space:nowrap}
+
+.cicero-detect-status{font-size:12px;color:#527e77;padding:4px 0}
+
+.cicero-upload{border:1px solid #cfe9e0;background:#f8fffb;border-radius:15px;padding:12px;margin:10px 0}
+
+.cicero-upload label{display:inline-flex;align-items:center;gap:8px;border-radius:12px;background:#dff7ed;color:#247c69;padding:10px 14px;font-weight:800;cursor:pointer}
+
+.cicero-upload input[type=file]{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}
+
+.cicero-upload .file-name{font-size:13px;color:#587c73;margin:8px 0;overflow-wrap:anywhere}
+
+.cicero-upload-preview img{max-width:100%;max-height:380px;object-fit:contain;border-radius:12px;display:block}
+
+.cicero-upload-preview iframe{width:100%;height:420px;border:0;border-radius:12px}
+
+.cicero-global-large #view{font-size:1.14em!important}
+
+.cicero-global-large #view button,.cicero-global-large #view input,.cicero-global-large #view textarea,.cicero-global-large #view select{font-size:1.08em!important}
+
+.cicero-global-contrast{filter:contrast(1.18)}
+
+/* Accessibility mode is a child of Practice, not a separate sidebar group */
+
+@media(max-width:850px){.cicero-camera-global{gap:6px}.cicero-camera-global select{max-width:100%}}
+
+</style>
+
+<script id="cicero-final-structure-js">
+
+(()=>{
+
+ const $=id=>document.getElementById(id);
+
+ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+ // Remove separate accessibility destinations and place the feature under Practice.
+
+ const side=document.querySelector('.cicero-sidebar');
+
+ if(side){
+
+   side.querySelectorAll('[data-page="Thuyết trình tiếp cận"]').forEach(el=>el.remove());
+
+   const study=[...side.querySelectorAll('.nav-group')].find(g=>/Học tập/.test(g.textContent));
+
+   if(study){
+
+   }
+
+ }
+
+ // Replace topbar's separate accessibility page shortcut with shared global controls.
+
+ const topActions=document.querySelector('.topbar-actions');
+
+ if(topActions){
+
+   const old=[...topActions.querySelectorAll('[data-page]')].find(b=>b.dataset.page==='Thuyết trình tiếp cận');if(old)old.remove();
+
+   if(!document.getElementById('ciceroGlobalAccess')){
+
+     const bar=document.createElement('div');bar.id='ciceroGlobalAccess';bar.className='cicero-global-access';bar.setAttribute('aria-label','Truy cập dễ dàng – áp dụng toàn website');
+
+     bar.innerHTML='<strong>Truy cập dễ dàng:</strong><button type="button" id="ciceroGlobalText" aria-pressed="false">A+ Cỡ chữ</button><button type="button" id="ciceroGlobalContrast" aria-pressed="false">◐ Tương phản</button><button type="button" id="ciceroGlobalRead">🔊 Đọc nội dung</button><button type="button" id="ciceroGlobalStop">■ Dừng đọc</button>';
+
+     topActions.insertAdjacentElement('afterend',bar);
+
+     $('ciceroGlobalText').onclick=()=>{const on=document.body.classList.toggle('cicero-global-large');$('ciceroGlobalText').setAttribute('aria-pressed',String(on))};
+
+     $('ciceroGlobalContrast').onclick=()=>{const on=document.body.classList.toggle('cicero-global-contrast');$('ciceroGlobalContrast').setAttribute('aria-pressed',String(on))};
+
+     $('ciceroGlobalRead').onclick=()=>{const text=document.getElementById('view')?.innerText||'';if(text&&'speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text.slice(0,7000));u.lang='vi-VN';speechSynthesis.speak(u)}};
+
+     $('ciceroGlobalStop').onclick=()=>speechSynthesis.cancel();
+
+   }
+
+ }
+
+ // Shared camera zoom and fullscreen controls are added to every camera preview.
+
+ function enhanceCameraFrames(){
+
+   document.querySelectorAll('#view .camera-frame').forEach((frame,idx)=>{
+
+     const video=frame.querySelector('video');if(!video||frame.dataset.sharedCameraTools==='1')return;frame.dataset.sharedCameraTools='1';
+
+     const tools=document.createElement('div');tools.className='cicero-camera-global';
+
+     const select=document.createElement('select');select.setAttribute('aria-label','Zoom camera');
+
+     ['0.4','0.5','0.7','1','1.25','1.5','2','2.5','3'].forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent=v+'×';if(v==='1')o.selected=true;select.appendChild(o)});
+
+     const label=document.createElement('label');label.textContent='Zoom camera ';label.appendChild(select);
+
+     const full=document.createElement('button');full.type='button';full.textContent='⛶ Toàn màn hình';
+
+     tools.append(label,full);frame.insertAdjacentElement('afterend',tools);
+
+     select.addEventListener('change',()=>{const z=Number(select.value);video.style.transform=`${video.id==='cam'||video.id==='bodyCam'?'scaleX(-1) ':''}scale(${z})`;video.style.transformOrigin='center center';frame.dataset.zoom=String(z)});
+
+     full.onclick=()=>{if(frame.requestFullscreen)frame.requestFullscreen();else frame.classList.toggle('cicero-camera-full')};
+
+   });
+
+ }
+
+ // Make slide upload compact, clearly show the chosen file, and preview supported formats.
+
+ function improveSlideUploads(){
+
+   document.querySelectorAll('#view input[type=file]').forEach((input,idx)=>{
+
+     if(input.dataset.ciceroUpload==='1')return;input.dataset.ciceroUpload='1';
+
+     const wrap=document.createElement('div');wrap.className='cicero-upload';
+
+     const label=document.createElement('label');label.textContent='＋ Chọn tệp trình chiếu';label.htmlFor=input.id||('ciceroUpload'+idx);if(!input.id)input.id=label.htmlFor;
+
+     const name=document.createElement('div');name.className='file-name';name.textContent='Chưa chọn tệp';
+
+     const preview=document.createElement('div');preview.className='cicero-upload-preview';
+
+     input.parentNode.insertBefore(wrap,input);wrap.append(label,name,preview);wrap.appendChild(input);
+
+     input.accept='image/*,.pdf,.ppt,.pptx';
+
+     input.addEventListener('change',()=>{
+
+       const f=input.files&&input.files[0];preview.innerHTML='';if(!f){name.textContent='Chưa chọn tệp';return}name.textContent='Đã chọn: '+f.name;
+
+       const url=URL.createObjectURL(f);
+
+       if(f.type.startsWith('image/')){const im=document.createElement('img');im.src=url;im.alt='Xem trước slide '+f.name;preview.appendChild(im)}
+
+       else if(f.type==='application/pdf'){const fr=document.createElement('iframe');fr.src=url;fr.title='Xem trước PDF';preview.appendChild(fr)}
+
+       else if(/\.pptx?$/i.test(f.name)){preview.textContent='Đã nhận tệp PowerPoint. Trình duyệt lưu tệp đã chọn; để xem trước slide, hãy xuất PowerPoint thành PDF hoặc ảnh.'}
+
+       else preview.textContent='Định dạng tệp này chưa được hỗ trợ xem trước.';
+
+     });
+
+   });
+
+ }
+
+ // Optional person detection: numbers visible people from left to right using MediaPipe.
+
+ // This counts/boxes people; it does not claim to identify which person is speaking.
+
+ let detectorPromise=null,detectLoop=null;
+
+ async function loadPersonDetector(){
+
+   if(detectorPromise)return detectorPromise;
+
+   detectorPromise=(async()=>{
+
+     const vision=await import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14');
+
+     const files=await vision.FilesetResolver.forVisionTasks('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/wasm');
+
+     return vision.ObjectDetector.createFromOptions(files,{baseOptions:{modelAssetPath:'https://storage.googleapis.com/mediapipe-models/object_detector/efficientdet_lite0/float16/1/efficientdet_lite0.tflite'},scoreThreshold:.45,runningMode:'VIDEO',categoryAllowlist:['person']});
+
+   })();return detectorPromise;
+
+ }
+
+ function addPeopleDetection(){
+
+   const frame=[...document.querySelectorAll('#view .camera-frame')].find(f=>{const v=f.querySelector('video');return v&&v.readyState>=2&&v.videoWidth>0});if(!frame)return;
+
+   if(frame.querySelector('.cicero-person-detect'))return;
+
+   const controls=document.createElement('div');controls.className='cicero-camera-global cicero-person-detect';controls.innerHTML='<button type="button" class="cicero-person-start">🔎 Nhận diện số người</button><span class="cicero-detect-status" aria-live="polite">Chưa bật nhận diện</span>';
+
+   const layer=document.createElement('div');layer.className='cicero-person-layer';frame.appendChild(layer);frame.insertAdjacentElement('afterend',controls);
+
+   const status=controls.querySelector('.cicero-detect-status');
+
+   controls.querySelector('button').onclick=async()=>{
+
+     const video=frame.querySelector('video');if(detectLoop){cancelAnimationFrame(detectLoop);detectLoop=null;layer.innerHTML='';status.textContent='Đã dừng nhận diện';return}
+
+     status.textContent='Đang tải mô hình nhận diện người…';
+
+     try{
+
+       const detector=await loadPersonDetector();status.textContent='Đang nhận diện…';let last=0;
+
+       const tick=now=>{if(!video.isConnected||video.readyState<2){detectLoop=requestAnimationFrame(tick);return}if(now-last>250){last=now;try{
+
+         const result=detector.detectForVideo(video,now);const people=(result.detections||[]).map(d=>({box:d.boundingBox,score:d.categories?.[0]?.score||0})).sort((a,b)=>(a.box.originX+a.box.width/2)-(b.box.originX+b.box.width/2));
+
+         layer.innerHTML='';people.forEach((p,i)=>{const el=document.createElement('div');el.className='cicero-person-box';el.style.left=(p.box.originX/video.videoWidth*100)+'%';el.style.top=(p.box.originY/video.videoHeight*100)+'%';el.style.width=(p.box.width/video.videoWidth*100)+'%';el.style.height=(p.box.height/video.videoHeight*100)+'%';const tag=document.createElement('b');tag.textContent='Người '+String(i+1).padStart(2,'0');el.appendChild(tag);layer.appendChild(el)});
+
+         status.textContent='Phát hiện '+people.length+' người · đánh số từ trái sang phải';
+
+       }catch(e){status.textContent='Không phân tích được khung hình: '+e.message}}
+
+       detectLoop=requestAnimationFrame(tick)};
+
+       detectLoop=requestAnimationFrame(tick);
+
+     }catch(e){status.textContent='Không tải được mô hình nhận diện. Kiểm tra kết nối Internet rồi thử lại.';detectorPromise=null}
+
+   };
+
+ }
+
+ function update(){enhanceCameraFrames();improveSlideUploads();addPeopleDetection()}
+
+ const mo=new MutationObserver(update);mo.observe(document.getElementById('view')||document.body,{childList:true,subtree:true});
+
+ update();setTimeout(update,300);setTimeout(update,900);
+
+})();
+
+</script>
+
+ 
+
+ 
+
+<script id="cicero-access-tile-fix">
+
+(()=>{
+
+ const addTile=()=>{
+
+  const view=document.getElementById('view');
+
+  if(!view || document.getElementById('ciceroAccessTile')) return;
+
+  const heading=view.querySelector('h1.hero');
+
+  if(!heading || !/Chọn nội dung luyện tập/i.test(heading.textContent)) return;
+
+  const grid=view.querySelector('.grid,.skill-grid,.activity-grid');
+
+  if(!grid) return;
+
+  const tile=document.createElement('button');
+
+  tile.id='ciceroAccessTile'; tile.type='button'; tile.className='skill';
+
+  tile.innerHTML='<span class="art">🦯</span><span class="skill-label">Thuyết trình cho người khiếm thị</span><small style="font-weight:600;color:#66898a">Đọc nội dung, hỗ trợ bằng giọng nói và bàn phím</small>';
+
+  tile.addEventListener('click',()=>{
+
+   if(window.ciceroOpenAccessiblePresentation) window.ciceroOpenAccessiblePresentation();
+
+   else if(window.page) window.page('Thuyết trình tiếp cận');
+
+  });
+
+  grid.appendChild(tile);
+
+ };
+
+ const view=document.getElementById('view');
+
+ if(view){new MutationObserver(()=>setTimeout(addTile,30)).observe(view,{childList:true,subtree:true});}
+
+ setTimeout(addTile,100);setTimeout(addTile,500);
+
+})();
+
+</script>
+
+ 
+
+</body></html>
 
